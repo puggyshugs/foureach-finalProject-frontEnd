@@ -1,3 +1,13 @@
-.Login {
-    
+.login {
+    background-color: #444444;
+    border: none;
+    color: white;
+    padding: 20px;
+    width:150px;
+    height:150px;
+    text-align: center;
+    border-radius: 100%;  
+
 }
+
+

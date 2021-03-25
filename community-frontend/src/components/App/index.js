@@ -15,7 +15,7 @@ function App() {
 
   return (
 
-    <Router>
+    
       <div>
       <div style={{ margin: "0 30%" }}>
         {!isAuthenticated && <LandingPage/>}
@@ -24,34 +24,6 @@ function App() {
       </div>
       </div>
 
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="/chat">Chat</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Switch>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/chat">
-            <Chat />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
   );
 }
 

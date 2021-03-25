@@ -6,11 +6,14 @@ import "./LandingPage.css";
 function LandingPage(){
     return(
         <>
-        <div className = "LandingPage">
+        <div className="LandingPage">
         <h1>Title</h1>
-        <img className = "logo" src = {logo} alt = "Logo"/>
+        <p>Here is a brief description of the community app</p>
+        <img className="LandingPage-logo" src={logo} alt="logo"/>
+        <div className="vertical-center"><LoginButton /></div>
+        
         </div>
-    <LoginButton />
+    
     </>
     )
 }
