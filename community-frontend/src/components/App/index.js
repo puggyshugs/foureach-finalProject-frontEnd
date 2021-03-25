@@ -17,6 +17,14 @@ function App() {
 
     <Router>
       <div>
+      <div style={{ margin: "0 30%" }}>
+        {!isAuthenticated && <LoginButton />}
+        {isAuthenticated && <LogoutButton />}
+        {isAuthenticated && <Chat />}    
+      </div>
+      </div>
+
+      <div>
         <nav>
           <ul>
             <li>
@@ -44,25 +52,8 @@ function App() {
         </Switch>
       </div>
     </Router>
-
-
-    <div 
-    // className={css.App}
-    >
-      <div style={{ margin: "0 30%" }}>
-        {!isAuthenticated && <LoginButton />}
-        {isAuthenticated && <LogoutButton />}
-        {isAuthenticated && <Chat />}    
-      </div>
-    </div>
-
   );
 }
 
 export default App;
 
-{
-  /* <div style={{ margin: "0 30%" }}>
-  <Chat />
-</div>; */
-}

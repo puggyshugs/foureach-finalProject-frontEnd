@@ -1,4 +1,4 @@
-import Input from '../Input/Input.css';
+import './Input.css';
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from '@chakra-ui/icons';
 
