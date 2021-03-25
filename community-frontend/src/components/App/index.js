@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Profile from "../Profile";
 
 import { useAuth0 } from "@auth0/auth0-react"; 
-import LoginButton from "../Login";
-import LogoutButton from "../Logout";
+import LandingPage from "../LandingPage";
+import LogoutButton from "../LogoutButton";
 
 import Chat from "../Chat/Chat";
 import HomePage from "../HomePage/index";
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <div>
       <div style={{ margin: "0 30%" }}>
-        {!isAuthenticated && <LoginButton />}
+        {!isAuthenticated && <LandingPage/>}
         {isAuthenticated && <LogoutButton />}
         {isAuthenticated && <Chat />}    
       </div>
