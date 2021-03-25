@@ -5,7 +5,7 @@ import "./LandingPage.css";
 
 function LandingPage(){
     return(
-        <>
+    <>
         <div className="LandingPage">
         <h1>Title</h1>
         <p>Here is a brief description of the community app</p>
