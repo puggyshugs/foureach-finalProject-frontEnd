@@ -9,11 +9,11 @@ function ChatInput(props) {
   function onSubmit(e) {
     e.preventDefault();
 
-    const isUserProvided = user && user !== "";
+    //const isUserProvided = user && user !== "";
     const isMessageProvided = message && message !== "";
 
-    if (isUserProvided && isMessageProvided) {
-      props.sendMessage(user, message);
+    if (isMessageProvided) {
+      props.sendMessage(user.name, message);
     } else {
       alert("Please insert an user and a message.");
     }
@@ -31,7 +31,7 @@ function ChatInput(props) {
     <form onSubmit={onSubmit}>
       <label htmlFor="user">User:</label>
       <br />
-      <input id="user" name="user" value={user.name} />
+      <input type= "text" value={user.name} />
       <br />
       <label htmlFor="message">Message:</label>
       <br />
