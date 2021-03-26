@@ -1,0 +1,31 @@
+.LandingPage {
+    text-align: center;
+}
+
+.LandingPage-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+  
+@media (prefers-reduced-motion: no-preference) {
+    .LandingPage-logo {
+      animation: LandingPage-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes LandingPage-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }   
+  }
