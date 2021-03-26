@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomePage.css";
-import Input from "../Input/index";
+import PostsInput from "../PostsInput/index";
 import UserPosts from "../UserPosts/index";
 import NavBar from "../NavBar/index";
 
@@ -10,7 +10,7 @@ function HomePage() {
       <h1>HomePage</h1>
 
       <UserPosts />
-      <Input />
+
       <NavBar />
     </div>
   );
