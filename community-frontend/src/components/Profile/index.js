@@ -1,11 +1,22 @@
-import "./Profile.css";
+import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 
-function Profile() {
+const Profile = () => {
+  const { loading, user } = useAuth0();
+
+  if (loading || !user) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="Profile">
-      <h1>Profile</h1>
-    </div>
+    <>
+      <img src={user.picture} alt="Profile Picture" />
+
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <code>{JSON.stringify(user, null, 2)}</code>
+    </>
   );
-}
+};
 
 export default Profile;
