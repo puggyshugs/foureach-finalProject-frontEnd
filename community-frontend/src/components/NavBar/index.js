@@ -1,11 +1,12 @@
-import './NavBar.css';
+import "./NavBar.css";
+
 
 function NavBar() {
-  return (
-    <div className="NavBar">
-    
-    </div>
-  );
+  return(
+    <>
+
+    </>
+  )
 }
 
 export default NavBar;
