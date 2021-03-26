@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function ChatInput(props) {
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
+  const { user } = useAuth0();
   const [message, setMessage] = useState("");
 
   function onSubmit(e) {
@@ -16,11 +18,11 @@ function ChatInput(props) {
       alert("Please insert an user and a message.");
     }
   }
-
+/* 
   function onUserUpdate(e) {
     setUser(e.target.value);
   }
-
+ */
   function onMessageUpdate(e) {
     setMessage(e.target.value);
   }
@@ -29,7 +31,7 @@ function ChatInput(props) {
     <form onSubmit={onSubmit}>
       <label htmlFor="user">User:</label>
       <br />
-      <input id="user" name="user" value={user} onChange={onUserUpdate} />
+      <input id="user" name="user" value={user.name} />
       <br />
       <label htmlFor="message">Message:</label>
       <br />
