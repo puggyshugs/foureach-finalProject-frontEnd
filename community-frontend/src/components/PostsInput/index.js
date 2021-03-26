@@ -2,9 +2,11 @@ import "./Input.css";
 import React, { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
+import { useAuth0 } from '@auth0/auth0-react';
 
 function PostsInput() {
   const [text, setText] = useState("");
+  const { user } = useAuth0();
 
   function updateText(e) {
     setText(e.target.value);
@@ -13,7 +15,7 @@ function PostsInput() {
   async function handleClick(content) {
     const response = await fetch("https://localhost:5001/posts", {
       method: "POST",
-      body: JSON.stringify({ content: content }),
+      body: JSON.stringify({ content: content, name: user.name }),
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     const resData = await response.json();
