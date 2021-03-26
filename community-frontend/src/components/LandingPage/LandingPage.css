@@ -7,6 +7,11 @@
     pointer-events: none;
 }
 
+.LandingPage-logo2 {
+    height: 40vmin;
+    pointer-events: none;
+}
+
 .vertical-center {
     margin: 0;
     position: absolute;
@@ -14,7 +19,27 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-  
+
+.imageContainer {
+    width: 40vmin;
+    height: 40vminx;
+    position: relative;
+    margin: 0px;
+
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    z-index: -1;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .LandingPage-logo {
       animation: LandingPage-logo-spin infinite 20s linear;
@@ -28,4 +53,15 @@
     to {
         transform: rotate(360deg);
     }   
-  }
+}
+
+.imageContainer {
+    width: 40vmin;
+    height: 40vminx;
+    position: relative;
+    margin: 0px;
+
+}
+
+
+

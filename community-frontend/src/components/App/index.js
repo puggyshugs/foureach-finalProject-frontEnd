@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <div style={{ margin: "0 30%" }}>
-        {!isAuthenticated && <LoginButton />}
+        {!isAuthenticated && <LandingPage />}
       </div>
 
       {isAuthenticated && (

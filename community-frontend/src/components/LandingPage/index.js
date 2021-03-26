@@ -9,7 +9,10 @@ function LandingPage(){
         <div className="LandingPage">
         <h1>Title</h1>
         <p>Here is a brief description of the community app</p>
-        <img className="LandingPage-logo" src={logo} alt="logo"/>
+        <div className="imageContainer">
+        <div><img className="imageContainer box LandingPage-logo" src={logo} alt="logo"/></div>
+        <div><img className="imageContainer overlay LandingPage-logo2" src={logo} alt="logo"/></div>
+        </div>
         <div className="vertical-center"><LoginButton /></div>
         
         </div>
