@@ -3,13 +3,15 @@ import { HubConnectionBuilder } from "@microsoft/signalr";
 
 import ChatWindow from "../ChatWindow/ChatWindow";
 import ChatInput from "../ChatInput/ChatInput";
+import Message from '../Message/Message'
 
 function Chat() {
   const [connection, setConnection] = useState(null);
   const [chat, setChat] = useState([]);
   const latestChat = useRef(null);
-  const [called, setCalled] = useState(false);
-
+  const[currentTyper, setCurrentTyper] = useState(null);
+  const[currentMessage, setCurrentMessage] = useState(null);
+  const[send, setSend] = useState(false);
   latestChat.current = chat;
 
   useEffect(() => {
@@ -31,14 +33,12 @@ function Chat() {
           connection.on("ReceiveMessage", (message) => {
             const updatedChat = [...latestChat.current];
             updatedChat.push(message);
-
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
-            const updatedChat = [...latestChat.current];
-            updatedChat.push(`${user} is typing...`);
-
-            setChat(updatedChat);
+            console.log(user);
+            setCurrentTyper(user.name);
+            setCurrentMessage(user.message)
           });
         })
         .catch((e) => console.log("Connection failed: ", e));
@@ -46,7 +46,6 @@ function Chat() {
   }, [connection]);
 
   async function sendMessage(user, message) {
-    setCalled(!called);
     const chatMessage = {
       user: user,
       message: message,
@@ -54,39 +53,44 @@ function Chat() {
 
     if (connection.connectionStarted) {
       try {
-        await connection.send("SendMessage", chatMessage);
+       await connection.send("SendMessage", chatMessage) && setSend(!send); 
+       setSend(send)      
       } catch (e) {
         console.log(e);
       }
     } else {
       alert("No connection to server yet.");
     }
+   
   }
 
-  async function sendTyper(user, message) {
+  async function sendTyper(user) {
     const chatMessage = {
       user: user,
       message: `${user} is typing...`,
     };
 
-    if (connection.connectionStarted && message!=="" && called === false) {
+    if (
+      connection.connectionStarted && send === false
+    ) {
       try {
-        await connection.send("SendTyper", chatMessage);
+        await connection.send("SendTyper", chatMessage) && setSend(!send);
       } catch (e) {
         console.log(e);
       }
     } else {
       alert("No connection to server yet.");
     }
-    console.log(sendTyper());
   }
- 
-
+    
+  
   return (
     <div>
-      <ChatInput sendMessage={sendMessage} onChangeValue = {sendTyper}/>
+      <ChatInput sendMessage={sendMessage} sendTyper={sendTyper}/>
       <hr />
-      <ChatWindow chat={chat} />
+      <ChatWindow chat={chat}/>
+      <Message  message={currentMessage}/>
+
     </div>
   );
 }
