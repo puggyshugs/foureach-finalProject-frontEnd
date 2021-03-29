@@ -13,6 +13,8 @@ function UserPosts() {
   }
   useEffect(() => getPost());
   //const posts = getPost();
+  let handleClick = null;  // placeholder as null, correct after lunch!
+  
 
   return (
     <div>
@@ -20,7 +22,7 @@ function UserPosts() {
         {posts &&
           posts.map((post, i) => (
             <li key={i}>
-              {post.name} {post.content}
+              {post.name} {post.content} <button onClick={handleClick}> X </button>
             </li>
           ))}
       </ul>
