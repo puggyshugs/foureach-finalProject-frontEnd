@@ -11,7 +11,7 @@ function UserPosts() {
     setPosts(resData);
     return posts;
   }
-  useEffect(() => getPost());
+  useEffect(() => getPost(), []);
   //const posts = getPost();
 
   return (

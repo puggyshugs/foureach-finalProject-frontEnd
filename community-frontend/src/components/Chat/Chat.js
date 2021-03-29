@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HubConnectionBuilder } from "@microsoft/signalr";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import ChatWindow from "../ChatWindow/ChatWindow";
 import ChatInput from "../ChatInput/ChatInput";
@@ -8,6 +9,7 @@ function Chat() {
   const [connection, setConnection] = useState(null);
   const [chat, setChat] = useState([]);
   const latestChat = useRef(null);
+  const { user } = useAuth0();
 
   latestChat.current = chat;
 

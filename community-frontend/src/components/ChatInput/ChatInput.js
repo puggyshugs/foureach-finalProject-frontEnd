@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function ChatInput(props) {
-  // const [user, setUser] = useState("");
+  // const [userName, setUserName] = useState("");
   const { user } = useAuth0();
   const [message, setMessage] = useState("");
 
@@ -13,25 +13,27 @@ function ChatInput(props) {
     const isMessageProvided = message && message !== "";
 
     if (isMessageProvided) {
+      console.log(user.name);
       props.sendMessage(user.name, message);
     } else {
       alert("Please insert an user and a message.");
     }
   }
-/* 
-  function onUserUpdate(e) {
-    setUser(e.target.value);
-  }
- */
+
+  // function onUserUpdate(e) {
+  //   setUserName(e.target.value);
+  // }
+
   function onMessageUpdate(e) {
     setMessage(e.target.value);
+    console.log(e.target.value);
   }
 
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="user">User:</label>
       <br />
-      <input type= "text" value={user.name} />
+      <input type="text" value={user.name} />
       <br />
       <label htmlFor="message">Message:</label>
       <br />
