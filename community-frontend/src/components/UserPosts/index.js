@@ -20,7 +20,7 @@ function UserPosts() {
         {posts &&
           posts.map((post, i) => (
             <li key={i}>
-              {post.name} {post.content}
+              {post.name} says: {post.content}
             </li>
           ))}
       </ul>
