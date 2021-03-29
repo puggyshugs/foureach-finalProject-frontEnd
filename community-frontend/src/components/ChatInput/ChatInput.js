@@ -11,9 +11,21 @@ function ChatInput(props) {
 
     //const isUserProvided = user && user !== "";
     const isMessageProvided = message && message !== "";
-
     if (isMessageProvided) {
       props.sendMessage(user.name, message);
+    } else {
+      alert("Please insert an user and a message.");
+    }
+  }
+
+  function onChangeValue(e) {
+    e.preventDefault();
+    
+    //const isUserProvided = user && user !== "";
+    const isMessageProvided = message && message !== "";
+    if (isMessageProvided) {
+      props.sendTyper(user.name, message);
+      setMessage(message)
     } else {
       alert("Please insert an user and a message.");
     }
@@ -28,6 +40,10 @@ function ChatInput(props) {
   }
 
   return (
+    <>
+    <form onChange={onChangeValue}  value={message}>
+    </form>
+   
     <form onSubmit={onSubmit}>
       <label htmlFor="user">User:</label>
       <br />
@@ -46,6 +62,7 @@ function ChatInput(props) {
       <br />
       <button>Submit</button>
     </form>
+    </>
   );
 }
 

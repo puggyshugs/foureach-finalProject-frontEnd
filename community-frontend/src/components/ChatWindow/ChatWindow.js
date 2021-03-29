@@ -11,7 +11,7 @@ function ChatWindow(props) {
     />
   ));
 
-  return <div>{chat}</div>;
+  return <div>{chat}</div>
 }
 
 export default ChatWindow;
