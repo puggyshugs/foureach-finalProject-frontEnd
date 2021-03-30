@@ -2,7 +2,7 @@ import "./Input.css";
 import React, { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function PostsInput() {
   const [text, setText] = useState("");
@@ -31,9 +31,9 @@ function PostsInput() {
       <Button
         onClick={() => handleClick(text)}
         leftIcon={<ChatIcon />}
-        bg="slategrey"
+        bg="lightblue"
         radius="50%"
-        color="white"
+        color="slategray"
         variant="solid"
       >
         Send Message

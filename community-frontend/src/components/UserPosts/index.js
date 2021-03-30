@@ -14,7 +14,9 @@ function UserPosts() {
     setPosts(resData);
     return posts;
   }
+
   useEffect(() => getPost(), []);  //need to add empty dependency array (without it it is an infinite loop)
+
   //const posts = getPost();
   //let handleClick = null;  // placeholder as null, correct after lunch!
   
@@ -38,7 +40,9 @@ function UserPosts() {
         {posts &&
           posts.map((post, i) => (
             <li key={i}>
+
               {post.name} {post.content} <button disabled = {post.name !== user.name} onClick={() => handleClick(post.id)}> X </button>
+
             </li>
           ))}
       </ul>
