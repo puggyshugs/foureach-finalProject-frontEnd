@@ -28,6 +28,17 @@ function ChatInput(props) {
     setMessage(e.target.value)
   }
 
+  async function handleClick() {
+    const response = await fetch("https://localhost:5001/chats", {
+      method: "POST",
+      body: JSON.stringify({ name: user.name, message: message }),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    });
+    const resData = await response.json();
+    console.log(resData);
+  }
+
+  
   return (
     <>
     <form onSubmit={onSubmit}>
@@ -46,7 +57,8 @@ function ChatInput(props) {
       />
       <br />
       <br />
-      <button>Submit</button>
+      <button onClick={() => handleClick()}>Submit</button>
+
     </form>
     </>
   );

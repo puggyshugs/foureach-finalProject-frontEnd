@@ -12,7 +12,25 @@ function Chat() {
   const[currentTyper, setCurrentTyper] = useState(null);
   const[currentMessage, setCurrentMessage] = useState(null);
   const[send, setSend] = useState(false);
+  
+  // get old chats from database on page load.
+  async function getOldChat() {
+    const response = await fetch("https://localhost:5001/Chats");
+    const resData = await response.json();
+    console.log(resData);
+    setChat(resData);
+    return;
+  }
+
+  useEffect(() => {
+    getOldChat();
+  }, []);
+  
+  
   latestChat.current = chat;
+
+
+
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
@@ -32,7 +50,7 @@ function Chat() {
 
           connection.on("ReceiveMessage", (message) => {
             const updatedChat = [...latestChat.current];
-            updatedChat.push(message);
+            updatedChat.unshift(message);
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
