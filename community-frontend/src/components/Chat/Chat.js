@@ -81,6 +81,9 @@ function Chat() {
     } else {
       alert("No connection to server yet.");
     }
+    setTimeout(function () {
+      setCurrentMessage("");
+  }, 4000);
   }
     
   
