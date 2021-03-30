@@ -12,6 +12,7 @@ const Profile = () => {
   }
 
   return (
+
     <Card className={css.container} style={{ width: "30rem" }}>
       <Card.Img className={css.image} variant="top" src={user.picture} alt="Profile Picture" />
       <Card.Body>
@@ -25,6 +26,7 @@ const Profile = () => {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
+
   );
 };
 
