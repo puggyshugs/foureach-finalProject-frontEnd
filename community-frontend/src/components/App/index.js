@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Profile from "../Profile";
-
+import MapLeaflet from '../MapLeaflet/MapLeaflet'
 import LandingPage from "../LandingPage";
 
 import { useAuth0 } from "@auth0/auth0-react";
@@ -22,6 +22,7 @@ function App() {
 
       {isAuthenticated && (
         <div>
+          
           <LogoutButton />
           <Router>
             <nav>
@@ -35,6 +36,9 @@ function App() {
                 <li>
                   <Link to="/chat">Chat</Link>
                 </li>
+                <li>
+                  <Link to="/map">Map</Link>
+                </li>
               </ul>
             </nav>
             <Switch>
@@ -43,6 +47,9 @@ function App() {
               </Route>
               <Route path="/chat">
                 <Chat />
+              <Route path ="/map">
+                <MapLeaflet/>
+              </Route>
               </Route>
               <Route path="/">
                 <HomePage />
