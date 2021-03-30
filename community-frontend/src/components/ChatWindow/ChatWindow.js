@@ -5,16 +5,15 @@ import Message from "../Message/Message";
 function ChatWindow(props) {
   const chat = props.chat.map((m) => (
     <>
-    <Message
-      key={Date.now() * Math.random()}
-      user={m.user}
-      message={m.message}
-    />
+      <Message
+        key={Date.now() * Math.random()}
+        user={m.name}
+        message={m.message}
+      />
     </>
-
   ));
 
-  return <div>{chat}</div>
+  return <div>{chat}</div>;
 }
 
 export default ChatWindow;
