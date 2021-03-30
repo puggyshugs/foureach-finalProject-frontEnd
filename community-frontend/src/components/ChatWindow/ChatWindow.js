@@ -7,11 +7,15 @@ function ChatWindow(props) {
   const { user } = useAuth0();
 
   const chat = props.chat.map((m) => (
-    <Message
-      key={Date.now() * Math.random()}
-      user={user.name}
-      message={m.message}
-    />
+
+    <>
+      <Message
+        key={Date.now() * Math.random()}
+        user={m.name}
+        message={m.message}
+      />
+    </>
+
   ));
 
   return <div>{chat}</div>;
