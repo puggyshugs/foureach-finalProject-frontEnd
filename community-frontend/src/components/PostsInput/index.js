@@ -20,8 +20,8 @@ function PostsInput() {
     });
     const resData = await response.json();
     console.log(resData);
-    setText(resData.content);
-    return text;
+    //setText(resData.content);
+   // return text;
   }
 
   return (
