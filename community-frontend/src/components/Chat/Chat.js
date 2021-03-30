@@ -33,6 +33,7 @@ function Chat() {
           connection.on("ReceiveMessage", (message) => {
             const updatedChat = [...latestChat.current];
             updatedChat.push(message);
+            console.log(message);
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
