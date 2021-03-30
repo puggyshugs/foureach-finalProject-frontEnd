@@ -7,7 +7,6 @@ function ChatInput(props) {
   //console.log(user);
   const personName = user.name;
   const [message, setMessage] = useState("");
-  const [state, setState] = useState(false);
 
   function onSubmit(e) {
     e.preventDefault();
@@ -27,20 +26,21 @@ function ChatInput(props) {
     e.preventDefault();
     const isMessageProvided = message && message !== "" && message.length !== 0;
     if (isMessageProvided) {
+      console.log({ personName });
       props.sendTyper(personName, message);
     }
     setMessage(e.target.value);
   }
 
-  async function handleClick() {
-    const response = await fetch("https://localhost:5001/chats", {
-      method: "POST",
-      body: JSON.stringify({ name: user.name, message: message }),
-      headers: { "Content-type": "application/json; charset=UTF-8" },
-    });
-    const resData = await response.json();
-    console.log(resData.name);
-  }
+  // async function handleClick() {
+  //   const response = await fetch("https://localhost:5001/chats", {
+  //     method: "POST",
+  //     body: JSON.stringify({ name: user.name, message: message }),
+  //     headers: { "Content-type": "application/json; charset=UTF-8" },
+  //   });
+  //   const resData = await response.json();
+  //   console.log(resData);
+  // }
 
   return (
     <>
@@ -60,7 +60,7 @@ function ChatInput(props) {
         />
         <br />
         <br />
-        <button onClick={() => handleClick()}>Submit</button>
+        <button>Submit</button>
       </form>
     </>
   );
