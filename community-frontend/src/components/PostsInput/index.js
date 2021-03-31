@@ -26,15 +26,16 @@ function PostsInput({ setPostChange, postChange }) {
   }
 
   return (
-    <div className="Input">
-      <input onChange={(e) => updateText(e)} type="text"></input>
+    <div className={css.inputDiv}>
+      <input
+        className={css.inputField}
+        onChange={(e) => updateText(e)}
+        type="text"
+      ></input>
       <Button
         onClick={() => handleClick(text)}
         leftIcon={<ChatIcon />}
-        bg="lightblue"
-        radius="50%"
-        color="slategray"
-        variant="solid"
+        className={css.sendMessageButton}
       >
         Send Message
       </Button>

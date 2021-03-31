@@ -2,12 +2,13 @@ import css from "./UserPosts.module.css";
 import React, { useState, useEffect } from "react";
 import PostsInput from "../PostsInput";
 import { useAuth0 } from "@auth0/auth0-react";
+import { DeleteIcon } from "@chakra-ui/icons";
 
 function UserPosts() {
   const [click, setClick] = useState(false);
   const [posts, setPosts] = useState([]);
   const [postChange, setPostChange] = useState(false);
-  const [readMore, setReadMore] = useState();
+  const [readMore, setReadMore] = useState(false);
 
   const { user } = useAuth0();
 
@@ -37,38 +38,38 @@ function UserPosts() {
 
   return (
     <div className={css.postsDiv}>
+      <PostsInput postChange={postChange} setPostChange={setPostChange} />
       <ul className={css.postList}>
         {posts &&
           posts.map((post, i) => (
             <li className={css.listItemContainer} key={i}>
               <item className={css.nameTitle}>{post.name}</item>
-              <item className={css.contentBox}>{post.content}</item>
-              <div>
-                <p>
-                  {readMore
-                    ? post.content
-                    : `${post.content.substring(0, 10)}...`}{" "}
-                  <br></br>
-                  <button
-                    className={css.readMoreButton}
-                    onClick={() => setReadMore(!readMore)}
-                  >
-                    {readMore ? "show less" : "  read more"}
-                  </button>
-                </p>
+              <item className={css.contentBox}>
+                {readMore
+                  ? post.content
+                  : `${post.content.substring(0, 10)}...`}
+              </item>
+
+              <br></br>
+              <div className={css.buttonDiv}>
+                <button
+                  className={css.readMoreButton}
+                  onClick={() => setReadMore(!readMore)}
+                >
+                  {readMore ? "show less" : "  read more"}
+                </button>
+
+                <button
+                  className={css.deleteButton}
+                  disabled={post.name !== user.name}
+                  onClick={() => handleClick(post.id)}
+                >
+                  {<DeleteIcon />}
+                </button>
               </div>
-              <button
-                className={css.deleteButton}
-                disabled={post.name !== user.name}
-                onClick={() => handleClick(post.id)}
-              >
-                {" "}
-                X{" "}
-              </button>
             </li>
           ))}
       </ul>
-      <PostsInput postChange={postChange} setPostChange={setPostChange} />
     </div>
   );
 }

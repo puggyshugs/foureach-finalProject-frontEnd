@@ -59,7 +59,22 @@
   margin-right: 7px;
   padding-left: 7px;
   padding-right: 7px;
-  margin-top: 7px;
-  border: solid b÷lack;
+  margin-top: 10px;
   font-family: "Nunito", sans-serif;
+}
+
+.readMoreButton {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+  flex-wrap: wrap;
+  padding-right: 7px;
+  padding-bottom: 5px;
+  font-size: small;
+}
+
+.buttonDiv {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
 }
