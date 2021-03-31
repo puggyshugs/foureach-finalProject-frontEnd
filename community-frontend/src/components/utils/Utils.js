@@ -5,8 +5,8 @@ export const tileUrl =
   'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 
 export const defaultMapState = {
-  lat: 52.47559, 
-  lng: -1.88383,
-  zoom: 8,
+  lat: 52.477,
+  lng: -1.899,
+  zoom: 12,
   minZoom: 2,
 }
