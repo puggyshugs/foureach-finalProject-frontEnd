@@ -10,6 +10,10 @@ import "leaflet/dist/leaflet.css";
 
 function DemoMap() {
   
+  const eventsList = [
+  "music event",
+  "cultural event"
+  ]
  
 
  
@@ -17,6 +21,8 @@ function DemoMap() {
     lat: 52.477,    
     lng: -1.8990,
   }
+    const [events, setEvents] = useState(eventsList);
+    const[text, setText] = useState('')
     const[draggable, setDraggable] = useState(false)
     const[position, setPosition] = useState(center)
     const[lat, setLat] = useState(center)
@@ -59,10 +65,23 @@ function DemoMap() {
     getLocation();
      },[lat])             // create an events component and have a map with pins that are showing 
                           //different locations for different events 
+    
+    function describeEvent(e){
+      setText(e.target.value)
+    }
+
+    function addEventToList(text) {
+      const newEventsList = [...events, text];
+      setEvents(newEventsList);
+    }
+
+    const full = [postcode , road, text];
+
 
   return (
     <>
-    <input type='text' value= {[address]}></input>
+    <input type='text' value= {[postcode, road]}/>
+    <input type='text' onChange={(e)=>describeEvent(e)} value={text}/>
     <MapContainer
       center={[defaultMapState.lat, defaultMapState.lng]}
       zoom={defaultMapState.zoom}
@@ -72,7 +91,7 @@ function DemoMap() {
         position: "absolute",
         top: 20,
         bottom: 20,
-        left: 200,
+        left: 400,
         zIndex: 20,
       }}
       updateWhenZooming={false}
@@ -100,7 +119,14 @@ function DemoMap() {
         </Popup>
       </Marker>
     </MapContainer>
+    <button onClick={()=>addEventToList(full)}/>
+    <ul>
+            {events.map((item, index) => (
+                <li key={index}>{item}   </li>
+            ))}
+            </ul> 
     </>
+  
   );
 }
 export default DemoMap;
