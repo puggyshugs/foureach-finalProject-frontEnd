@@ -7,6 +7,7 @@ function UserPosts() {
   const [click, setClick] = useState(false);
   const [posts, setPosts] = useState([]);
   const [postChange, setPostChange] = useState(false);
+  const [readMore, setReadMore] = useState();
 
   const { user } = useAuth0();
 
@@ -35,13 +36,27 @@ function UserPosts() {
   }
 
   return (
-    <div className={css.PostsDiv}>
+    <div className={css.postsDiv}>
       <ul className={css.postList}>
         {posts &&
           posts.map((post, i) => (
             <li className={css.listItemContainer} key={i}>
               <item className={css.nameTitle}>{post.name}</item>
-              {post.content}{" "}
+              <item className={css.contentBox}>{post.content}</item>
+              <div>
+                <p>
+                  {readMore
+                    ? post.content
+                    : `${post.content.substring(0, 10)}...`}{" "}
+                  <br></br>
+                  <button
+                    className={css.readMoreButton}
+                    onClick={() => setReadMore(!readMore)}
+                  >
+                    {readMore ? "show less" : "  read more"}
+                  </button>
+                </p>
+              </div>
               <button
                 className={css.deleteButton}
                 disabled={post.name !== user.name}
