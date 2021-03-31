@@ -4,7 +4,7 @@ import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
 import { useAuth0 } from "@auth0/auth0-react";
 
-function PostsInput() {
+function PostsInput({ setPostChange, postChange }) {
   const [text, setText] = useState("");
   const { user } = useAuth0();
 
@@ -19,7 +19,8 @@ function PostsInput() {
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     const resData = await response.json();
-    console.log(resData);
+    setPostChange(!postChange);
+    console.log({ resData });
     //setText(resData.content);
     // return text;
   }
@@ -27,7 +28,6 @@ function PostsInput() {
   return (
     <div className="Input">
       <input onChange={(e) => updateText(e)} type="text"></input>
-      <p>{text}</p>
       <Button
         onClick={() => handleClick(text)}
         leftIcon={<ChatIcon />}
