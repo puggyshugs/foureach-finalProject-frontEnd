@@ -1,14 +1,15 @@
-import { MapContainer, TileLayer } from "react-leaflet";
-import { Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup  } from "react-leaflet";
 import { useState, useRef, useMemo, useCallback, useEffect } from "react";
 import css from './DemoMap.module.css';
 import { attribution, tileUrl, defaultMapState } from "../utils/Utils";
+import 'leaflet/dist/leaflet.css';
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import {Icon} from 'leaflet'
 
-import "leaflet/dist/leaflet.css";
 
 function DemoMap() {
-  const eventsList = ["music event", "cultural event"];
-
+  const eventsList = [["music event"], ["cultural event"], ["no event"]];
+  
   const center = {
     lat: 52.477,
     lng: -1.899,
@@ -82,12 +83,12 @@ function DemoMap() {
           center={[defaultMapState.lat, defaultMapState.lng]}
           zoom={defaultMapState.zoom}
           style={{
-            width: "50%",
+            width: "48%",
             height: "40%",
             position: "absolute",
             top: 20,
             bottom: 20,
-            left: 300,
+            left: 400,
             zIndex: 0,
           }}
           updateWhenZooming={false}
@@ -96,7 +97,7 @@ function DemoMap() {
           minZoom={defaultMapState.minZoom}
         >
           <TileLayer attribution={attribution} url={tileUrl} />
-          <Marker
+          <Marker icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [13, 11]})}
             draggable={draggable}
             eventHandlers={eventHandlers}
             position={position}
@@ -118,11 +119,14 @@ function DemoMap() {
         <input className= {css.eventDetails} type="text" value={road} />
         <textarea class={css.autoExpand} rows='5' data-min-rows='3' autofocus onChange={(e) => describeEvent(e)} value={text}> </textarea>
         <button className={css.buttonEvent} onClick={() => addEventToList(full)}>Create Event</button>
-        <ul>
+       
           {events.map((item, index) => (
-            <li key={index}>{item} </li>
+            <div className={css.cardEvent}>
+            <p key={index}>{item[0]} {item[1]}</p>
+            <p key={index}>{item[2]}</p>
+            </div>
           ))}
-        </ul>
+        
       </div>
     </div>
   );
