@@ -1,4 +1,4 @@
-import "./Input.css";
+import css from "./Input.module.css";
 import React, { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
@@ -21,7 +21,7 @@ function PostsInput() {
     const resData = await response.json();
     console.log(resData);
     //setText(resData.content);
-   // return text;
+    // return text;
   }
 
   return (

@@ -1,0 +1,12 @@
+.PostsDiv {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  border: solid goldenrod;
+  flex-direction: column;
+}
+
+.postList {
+  list-style-type: none;
+}

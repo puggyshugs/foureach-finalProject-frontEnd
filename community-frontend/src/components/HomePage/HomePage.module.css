@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.homePageContainer {
+  border: goldenrod;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: "Nunito", sans-serif;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border: solid goldenrod;
+}
+
+.UserPosts {
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  border: solid goldenrod;
+}
