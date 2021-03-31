@@ -1,0 +1,21 @@
+
+these go into scripts (were replaced by tailwind ones)
+// "start": "react-scripts start",
+  // "build": "react-scripts build",
+  // "test": "react-scripts test",
+
+
+  this goes in index.css
+  body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif, "Nunito";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace, sans-serif;
+}

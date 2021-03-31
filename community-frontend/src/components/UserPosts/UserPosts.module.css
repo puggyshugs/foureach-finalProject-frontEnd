@@ -1,0 +1,33 @@
+.PostsDiv {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-around;
+  border: solid goldenrod;
+  flex-direction: column;
+  background: cornsilk;
+  padding: 15vh;
+}
+
+.postList {
+  list-style-type: none;
+}
+
+.listItemContainer {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+  background: white;
+  padding: 1vh;
+}
+
+.nameTitle {
+  border: solid crimson;
+}
+
+.deleteButton {
+  border: solid grey;
+  align-self: flex-end;
+  flex-wrap: wrap;
+}

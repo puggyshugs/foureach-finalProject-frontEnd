@@ -16,20 +16,19 @@ function Chat() {
   const [send, setSend] = useState(false);
 
   // get old chats from database on page load.
-  // async function getOldChat() {
-  //   const response = await fetch("https://localhost:5001/Chats");
-  //   const resData = await response.json();
-  //   console.log(resData);
-  //   setChat(resData);
-  //   return;
-  // }
+  async function getOldChat() {
+    const response = await fetch("https://localhost:5001/Chats");
+    const resData = await response.json();
+    console.log(resData);
+    setChat(resData);
+    return;
+  }
 
-  // useEffect(() => {
-  //   getOldChat();
-  // }, []);
+  useEffect(() => {
+    getOldChat();
+  }, []);
 
   const { user } = useAuth0();
-
 
   latestChat.current = chat;
 
@@ -50,9 +49,10 @@ function Chat() {
           console.log("Connected!");
 
           connection.on("ReceiveMessage", (message) => {
-            const updatedChat = [...latestChat.current];
-            updatedChat.unshift(message);
-            //TODO: spread array
+            const updatedChat = [message, ...latestChat.current];
+            // updatedChat.unshift(message);
+            // const messageAddedToChat = [message, ...updatedChat];
+            // setChat(messageAddedToChat);
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {

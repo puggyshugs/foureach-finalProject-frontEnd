@@ -1,0 +1,11 @@
+.appContainer {
+  display: flex;
+  border: solid green;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  align-content: center;
+}
