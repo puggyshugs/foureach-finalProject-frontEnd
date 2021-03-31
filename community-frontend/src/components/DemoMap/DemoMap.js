@@ -13,11 +13,13 @@ function DemoMap() {
 
 
   const center = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 52.47559,
+    lng: -1.88383,
   }
     const[draggable, setDraggable] = useState(false)
     const[position, setPosition] = useState(center)
+    const[myLat, setLat] = useState(null)
+    const[myLng, setLng] = useState(null)
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
       () => ({
@@ -26,12 +28,17 @@ function DemoMap() {
           console.log(markerRef.current);
           if (marker != null) {
             setPosition(marker.getLatLng())
-            console.log(marker.getLatLng().lat)
+            setLat(marker.getLatLng().lat);
+            setLng(marker.getLatLng().lng);
           }
         },
       }),
       [],
     )
+
+    console.log(myLat);
+    console.log(myLng);
+
     const toggleDraggable = useCallback(() => {
       setDraggable((d) => !d)
     }, [])

@@ -14,13 +14,19 @@ function UserPosts() {
   useEffect(() => getPost(), []);
   //const posts = getPost();
 
+
+//  makeaMap() { if myLat[i] || myLng[i] == null }(dontmakeamap) else (makeamap)
+
+
   return (
     <div>
       <ul>
         {posts &&
           posts.map((post, i) => (
             <li key={i}>
-              {post.name} {post.content}
+              {post.name} {post.content} 
+              {/* pull out {post.myLat} {post.myLng}, then do voodoo on render If Not Null.  
+              <makeaMap>*/}
             </li>
           ))}
       </ul>
