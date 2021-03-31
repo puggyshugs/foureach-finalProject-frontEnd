@@ -20,18 +20,6 @@ function UserPosts() {
     return posts;
   }
 
-  // function addItemToList(text) {
-  //   const newPostsList = [...posts, { title: text }];
-  //   setPosts(newPostsList);
-  // }
-  // function deleteItemFromList(index) {
-  //   const deletedTodosList = [
-  //     ...todos.slice(0, index),
-  //     ...todos.slice(index + 1),
-  //   ];
-  //   setToDos(deletedTodosList);
-  // }
-
   async function handleClick(id) {
     const response = await fetch(`https://localhost:5001/posts/${id}`, {
       method: "DELETE",
