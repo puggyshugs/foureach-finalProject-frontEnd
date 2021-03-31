@@ -1,12 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 .PostsDiv {
   display: flex;
   align-items: center;
   align-self: center;
   justify-content: space-around;
-  border: solid goldenrod;
+  /* border: solid goldenrod; */
   flex-direction: column;
-  background: cornsilk;
-  padding: 15vh;
+  max-width: 600em;
+  margin: 2em auto 0;
+  background: linear-gradient(to right, #f7f7f7 54%, #e8f4fc 100%);
+  padding: 1em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  width: 40em;
 }
 
 .postList {
@@ -17,17 +24,42 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  border: solid black;
+  /* border: solid goldenrod; */
   background: white;
   padding: 1vh;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  width: 37em;
 }
 
 .nameTitle {
-  border: solid crimson;
+  border-radius: 25px;
+  padding: 3.5px;
+  padding-left: 10px;
+  background: linear-gradient(
+    to right,
+    hsl(202, 90%, 88%) 50%,
+    rgb(110, 202, 255) 100%
+  );
+  margin-left: 7px;
+  margin-right: 7px;
+  font-family: "Nunito", sans-serif;
+  font-size: large;
 }
 
 .deleteButton {
-  border: solid grey;
   align-self: flex-end;
   flex-wrap: wrap;
+  padding-right: 7px;
+  padding-bottom: 7px;
+}
+
+.contentBox {
+  margin-left: 7px;
+  margin-right: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-top: 7px;
+  border: solid b÷lack;
+  font-family: "Nunito", sans-serif;
 }

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.sendMessageButton {
+  background: linear-gradient(
+    to right,
+    hsl(202, 90%, 88%) 50%,
+    rgb(110, 202, 255) 100%
+  );
+  border-radius: 25px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  font-family: "Nunito", sans-serif;
+}
+
+.inputField {
+  border-radius: 25px;
+  padding: 7px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  width: 40vh;
+  height: 5vh;
+  margin: 10px;
+}
