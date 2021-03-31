@@ -4,20 +4,19 @@
   border: goldenrod;
   display: flex;
   flex-direction: column;
+  background: slategray;
+  border: solid goldenrod;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
 }
 
 .title {
   font-family: "Nunito", sans-serif;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
   border: solid goldenrod;
-}
-
-.UserPosts {
-  justify-content: center;
-  align-items: center;
   align-self: center;
-  align-content: center;
-  border: solid goldenrod;
+  margin: 10px;
+  font-size: 50px;
+  padding: 20px;
+  /* margin-bottom: 50vh; */
 }

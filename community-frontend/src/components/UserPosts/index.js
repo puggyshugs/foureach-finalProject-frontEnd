@@ -51,9 +51,11 @@ function UserPosts() {
       <ul className={css.postList}>
         {posts &&
           posts.map((post, i) => (
-            <li key={i}>
-              {post.name} {post.content}{" "}
+            <li className={css.listItemContainer} key={i}>
+              <item className={css.nameTitle}>{post.name}</item>
+              {post.content}{" "}
               <button
+                className={css.deleteButton}
                 disabled={post.name !== user.name}
                 onClick={() => handleClick(post.id)}
               >
