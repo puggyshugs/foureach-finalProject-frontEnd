@@ -25,24 +25,30 @@ function App() {
       {isAuthenticated && (
         <div>
          
-          <LogoutButton />
+         
           <Router>
-            <nav className={css.navBar}>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
+          
+            <nav>
+              <ul className={css.navBar}>
+              
+                <li className={css.bars}>
+                  <Link className={css.text} to="/">Home</Link>
                 </li>
-                <li>
-                  <Link to="/profile">Profile</Link>
+                <li className={css.bars}>
+                  <Link className={css.text} to="/profile">Profile</Link>
                 </li>
-                <li>
-                  <Link to="/chat">Chat</Link>
+                <li className={css.bars}>
+                  <Link className={css.text} to="/chat">Chat</Link>
                 </li>
-                <li>
-                  <Link to="/map">Map</Link>
+                <li className={css.bars}>
+                  <Link className={css.text} to="/map">Events</Link>
+                </li>
+                <li className={css.bars}>
+                  <LogoutButton />
                 </li>
               </ul>
             </nav>
+            
             <Switch>
               <Route path="/profile">
                 <Profile />
@@ -57,7 +63,9 @@ function App() {
                 <HomePage />
               </Route>
             </Switch>
+          
           </Router>
+          
         </div>
       )}
     </div>

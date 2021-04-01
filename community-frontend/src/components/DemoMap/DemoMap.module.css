@@ -1,7 +1,7 @@
 .main{
     display: flex;
     border: solid black;
-    
+    margin-top: 0px;
     background-image: linear-gradient(to left, rgb(182, 192, 201) , slategray);
 }
 
