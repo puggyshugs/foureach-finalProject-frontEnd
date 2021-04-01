@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
+.outerDivContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 50px;
+  /* border: solid green; */
+}
+
 .postsDiv {
   display: flex;
   align-items: center;
@@ -8,8 +17,8 @@
   /* border: solid goldenrod; */
   flex-direction: column;
   max-width: 600em;
-  margin: 2em auto 0;
-  background: linear-gradient(to right, #f7f7f7 54%, #e8f4fc 100%);
+  margin: auto 0;
+  background: #f7f7f7;
   padding: 1em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
@@ -52,6 +61,7 @@
   flex-wrap: wrap;
   padding-right: 7px;
   padding-bottom: 7px;
+  /* border: solid blue; */
 }
 
 .contentBox {
@@ -59,8 +69,11 @@
   margin-right: 7px;
   padding-left: 7px;
   padding-right: 7px;
+  padding-bottom: 50px;
   margin-top: 10px;
   font-family: "Nunito", sans-serif;
+  /* border: solid goldenrod; */
+  word-wrap: break-word;
 }
 
 .readMoreButton {
@@ -71,6 +84,7 @@
   padding-right: 7px;
   padding-bottom: 5px;
   font-size: small;
+  /* border: solid blue; */
 }
 
 .buttonDiv {

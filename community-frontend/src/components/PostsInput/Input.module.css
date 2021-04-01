@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
+.input {
+  /* border: solid goldenrod; */
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  padding: 1em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  margin-left: 3ch;
+  width: 40vh;
+}
+
 .sendMessageButton {
   background: linear-gradient(
     to right,
@@ -14,11 +26,6 @@
   font-family: "Nunito", sans-serif;
 }
 
-.inputField {
-  border-radius: 25px;
-  padding: 7px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  width: 40vh;
-  height: 5vh;
-  margin: 10px;
+.inputTitle {
+  font-family: "Nunito", sans-serif;
 }

@@ -37,39 +37,41 @@ function UserPosts() {
   }
 
   return (
-    <div className={css.postsDiv}>
+    <div className={css.outerDivContainer}>
+      <div className={css.postsDiv}>
+        <ul className={css.postList}>
+          {posts &&
+            posts.map((post, i) => (
+              <li className={css.listItemContainer} key={i}>
+                <item className={css.nameTitle}>{post.name}</item>
+                <item className={css.contentBox}>
+                  {readMore
+                    ? post.content
+                    : `${post.content.substring(0, 10)}...`}
+                </item>
+
+                <br></br>
+                <div className={css.buttonDiv}>
+                  <button
+                    className={css.readMoreButton}
+                    onClick={() => setReadMore(!readMore)}
+                  >
+                    {readMore ? "show less" : "  read more"}
+                  </button>
+
+                  <button
+                    className={css.deleteButton}
+                    disabled={post.name !== user.name}
+                    onClick={() => handleClick(post.id)}
+                  >
+                    {<DeleteIcon />}
+                  </button>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </div>
       <PostsInput postChange={postChange} setPostChange={setPostChange} />
-      <ul className={css.postList}>
-        {posts &&
-          posts.map((post, i) => (
-            <li className={css.listItemContainer} key={i}>
-              <item className={css.nameTitle}>{post.name}</item>
-              <item className={css.contentBox}>
-                {readMore
-                  ? post.content
-                  : `${post.content.substring(0, 10)}...`}
-              </item>
-
-              <br></br>
-              <div className={css.buttonDiv}>
-                <button
-                  className={css.readMoreButton}
-                  onClick={() => setReadMore(!readMore)}
-                >
-                  {readMore ? "show less" : "  read more"}
-                </button>
-
-                <button
-                  className={css.deleteButton}
-                  disabled={post.name !== user.name}
-                  onClick={() => handleClick(post.id)}
-                >
-                  {<DeleteIcon />}
-                </button>
-              </div>
-            </li>
-          ))}
-      </ul>
     </div>
   );
 }

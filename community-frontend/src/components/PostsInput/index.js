@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
 import { useAuth0 } from "@auth0/auth0-react";
+import { MDBInput } from "mdbreact";
 
 function PostsInput({ setPostChange, postChange }) {
   const [text, setText] = useState("");
@@ -26,18 +27,24 @@ function PostsInput({ setPostChange, postChange }) {
   }
 
   return (
-    <div className={css.inputDiv}>
-      <input
+    <div className={css.input}>
+      <h5 className={css.inputTitle}>
+        Let your community know what you're thinking...
+      </h5>
+      <MDBInput
         className={css.inputField}
+        type="textarea"
+        label="Type notification..."
+        rows="2"
+        icon="pencil-alt"
         onChange={(e) => updateText(e)}
-        type="text"
-      ></input>
+      />
       <Button
         onClick={() => handleClick(text)}
         leftIcon={<ChatIcon />}
         className={css.sendMessageButton}
       >
-        Send Message
+        Post
       </Button>
     </div>
   );
