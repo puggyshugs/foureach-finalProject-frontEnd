@@ -1,0 +1,22 @@
+.container {
+   
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 10px;
+}
+
+.image{
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    padding: 5px;
+    background:aqua; 
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+    box-shadow: var(--dark-shadow);
+  }
