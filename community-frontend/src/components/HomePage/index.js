@@ -1,17 +1,14 @@
 import React from "react";
-import "./HomePage.css";
+import css from "./HomePage.module.css";
 import PostsInput from "../PostsInput/index";
 import UserPosts from "../UserPosts/index";
-import NavBar from "../NavBar/index";
 
 function HomePage() {
   return (
-    <div>
-      <h1>HomePage</h1>
+    <div className={css.homePageContainer}>
+      <h1 className={css.title}>Home Page (replace with title)</h1>
 
-      <UserPosts />
-
-      <NavBar />
+      <UserPosts className={css.UserPosts} />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
 .homePageContainer {
-  border: goldenrod;
   display: flex;
   flex-direction: column;
   background: slategray;
-  border: solid goldenrod;
+  /* border: solid goldenrod; */
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -13,10 +12,13 @@
 
 .title {
   font-family: "Nunito", sans-serif;
-  border: solid goldenrod;
+  /* border: solid goldenrod; */
   align-self: center;
   margin: 10px;
   font-size: 50px;
-  padding: 20px;
-  /* margin-bottom: 50vh; */
+  padding: 0.5em;
+  background: #f7f7f7;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  margin-top: 30px;
 }
