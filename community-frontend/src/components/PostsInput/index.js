@@ -16,7 +16,7 @@ function PostsInput({ setPostChange, postChange }) {
   async function handleClick(content) {
     const response = await fetch("https://localhost:5001/posts", {
       method: "POST",
-      body: JSON.stringify({ content: content, name: user.name }),
+      body: JSON.stringify({ content: content, name: user.name }), // myLat and myLng 
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     const resData = await response.json();

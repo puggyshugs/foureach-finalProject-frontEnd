@@ -10,6 +10,8 @@ import LogoutButton from "../LogoutButton";
 
 import Chat from "../Chat/Chat";
 import HomePage from "../HomePage/index";
+import DemoMap from "../DemoMap/DemoMap";
+//import DemoMap from "../MapLeaflet/MapLeaflet";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -22,6 +24,7 @@ function App() {
 
       {isAuthenticated && (
         <div>
+         
           <LogoutButton />
           <Router>
             <nav className={css.navBar}>
@@ -35,6 +38,9 @@ function App() {
                 <li>
                   <Link to="/chat">Chat</Link>
                 </li>
+                <li>
+                  <Link to="/map">Map</Link>
+                </li>
               </ul>
             </nav>
             <Switch>
@@ -43,6 +49,9 @@ function App() {
               </Route>
               <Route path="/chat">
                 <Chat />
+              </Route>
+              <Route path ="/map">
+                <DemoMap/>
               </Route>
               <Route path="/">
                 <HomePage />

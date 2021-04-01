@@ -36,6 +36,10 @@ function UserPosts() {
     //return text;
   }
 
+
+//  makeaMap() { if myLat[i] || myLng[i] == null }(dontmakeamap) else (makeamap)
+
+
   return (
     <div className={css.outerDivContainer}>
       <div className={css.postsDiv}>
