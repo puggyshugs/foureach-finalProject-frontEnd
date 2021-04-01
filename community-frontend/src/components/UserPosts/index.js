@@ -47,7 +47,7 @@ function UserPosts() {
                 <item className={css.contentBox}>
                   {readMore
                     ? post.content
-                    : `${post.content.substring(0, 10)}...`}
+                    : `${post.content.substring(0, 100)}...`}
                 </item>
 
                 <br></br>
