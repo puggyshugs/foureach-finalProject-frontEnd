@@ -106,8 +106,12 @@ function Chat() {
   return (
     <div className={css.mainChatContainer}>
       <div className={css.inputAndWindowContainer}>
-        <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
-        <ChatWindow chat={chat} />
+        <div className={css.chatInputHoverMode}>
+          <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
+        </div>
+        <div className={css.chatWindowHover}>
+          <ChatWindow chat={chat} />
+        </div>
       </div>
     </div>
   );

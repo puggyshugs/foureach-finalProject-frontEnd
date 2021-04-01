@@ -5,6 +5,11 @@
   justify-content: center;
   min-height: 100vh;
   background: slategray;
+  background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   align-items: baseline;
 }
 
@@ -16,4 +21,12 @@
   justify-content: center;
   align-items: baseline;
   align-content: space-around;
+}
+
+.chatInputHoverMode {
+  width: 400px;
+}
+
+.chatWindowHover {
+  width: 40em;
 }

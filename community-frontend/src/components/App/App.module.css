@@ -10,13 +10,15 @@
 }
 
 .navBar {
+  position: fixed;
+  width: 100%;
   align-content: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* justify-items: space-around; */
   margin-bottom: 0px;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
 }
 .text {
   color: rgb(0, 0, 0);

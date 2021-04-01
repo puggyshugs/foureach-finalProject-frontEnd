@@ -5,7 +5,9 @@
   padding: 1em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
-  width: 35vh;
+  width: 375px;
+  position: fixed;
+  top: 60px;
   margin-right: 3ch;
 }
 

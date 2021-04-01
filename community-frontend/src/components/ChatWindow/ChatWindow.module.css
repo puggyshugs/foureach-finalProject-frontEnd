@@ -9,12 +9,13 @@
   padding: 1em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
-
-  height: 600px;
+  margin-bottom: 30px;
+  height: auto;
 }
 
 .chatWindowList {
   list-style-type: none;
   overflow-y: scroll;
   margin: 10px;
+  padding: 14px;
 }

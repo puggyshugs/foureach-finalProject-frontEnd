@@ -54,7 +54,8 @@ function UserPosts() {
                 <item className={css.contentBox}>
                   {!readMore
                     ? post.content
-                    : `${post.content.substring(0, 150)}...`}
+                    : `${post.content.substring(0, 150)}&hellip;`}
+
                   <button
                     hidden={post.content.length < 150}
                     className={css.readMoreButton}
