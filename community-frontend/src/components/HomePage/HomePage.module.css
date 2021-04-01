@@ -3,7 +3,7 @@
 .homePageContainer {
   display: flex;
   flex-direction: column;
-  background: slategray;
+  background: linear-gradient(to top, #b3e6e7 54%, #125048 100%);
   /* border: solid goldenrod; */
   justify-content: center;
   flex-wrap: wrap;
