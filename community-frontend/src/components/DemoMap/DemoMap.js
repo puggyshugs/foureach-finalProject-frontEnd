@@ -1,15 +1,29 @@
-import { MapContainer, TileLayer, Marker, Popup  } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useState, useRef, useMemo, useCallback, useEffect } from "react";
-import css from './DemoMap.module.css';
+import css from "./DemoMap.module.css";
 import { attribution, tileUrl, defaultMapState } from "../utils/Utils";
-import 'leaflet/dist/leaflet.css';
-import markerIconPng from "leaflet/dist/images/marker-icon.png"
-import {Icon} from 'leaflet'
-
+import "leaflet/dist/leaflet.css";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
 
 function DemoMap() {
-  const eventsList = [["music event"], ["cultural event"], ["no event"]];
-  
+  const eventsList = [
+    [
+      ["CV8 1QJ"],
+      ["Abbey End Car Park"],
+      [
+        "5-week Beginners photography course on 18th April 2020 at 18:00-Everything to get off Automatic mode and learn how to be more creative with Composition and Camera",
+      ]
+    ],
+    [
+      ["CV34 7NV"],
+      ["Ashley Main Road"],
+      [
+        "Street dance performance  on 24th April 2020 at 14:00 - Pick your favorite trainers and come with a high energy to learn basic steps and movements.",
+      ]
+    ],
+  ];
+
   const center = {
     lat: 52.477,
     lng: -1.899,
@@ -70,63 +84,101 @@ function DemoMap() {
   }
 
   function addEventToList(text) {
-    const newEventsList = [...events, text];
+    const newEventsList = [text, ...events];
     setEvents(newEventsList);
   }
 
   const full = [postcode, road, text];
 
   return (
-    <div className={css.container} >
-      <div className={css.map}>
-        <MapContainer className={css.map}
-          center={[defaultMapState.lat, defaultMapState.lng]}
-          zoom={defaultMapState.zoom}
-          style={{
-            width: "48%",
-            height: "40%",
-            position: "absolute",
-            top: 20,
-            bottom: 20,
-            left: 400,
-            zIndex: 0,
-          }}
-          updateWhenZooming={false}
-          updateWhenIdle={true}
-          preferCanvas={true}
-          minZoom={defaultMapState.minZoom}
-        >
-          <TileLayer attribution={attribution} url={tileUrl} />
-          <Marker icon={new Icon({iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [13, 11]})}
-            draggable={draggable}
-            eventHandlers={eventHandlers}
-            position={position}
-            ref={markerRef}
+    <div className={css.main}>
+      <div className={css.container}>
+        <div className={css.map}>
+          <MapContainer
+            className={css.map}
+            center={[defaultMapState.lat, defaultMapState.lng]}
+            zoom={defaultMapState.zoom}
+            style={{
+              width: "40%",
+              height: "40%",
+              border: "solid   rgb(0, 95, 150)",
+              borderRadius: "25px",
+              position: "absolute",
+              top: 300,
+              bottom: 20,
+              left: 850,
+              zIndex: 0,
+            }}
+            updateWhenZooming={false}
+            updateWhenIdle={true}
+            preferCanvas={true}
+            minZoom={defaultMapState.minZoom}
           >
-            <Popup minWidth={40}>
-              <span onClick={toggleDraggable}>
-                {draggable
-                  ? `${postcode}
+            <TileLayer attribution={attribution} url={tileUrl} />
+            <Marker
+              icon={
+                new Icon({
+                  iconUrl: markerIconPng,
+                  iconSize: [25, 41],
+                  iconAnchor: [13, 11],
+                })
+              }
+              draggable={draggable}
+              eventHandlers={eventHandlers}
+              position={position}
+              ref={markerRef}
+            >
+              <Popup minWidth={40}>
+                <span onClick={toggleDraggable}>
+                  {draggable
+                    ? `${postcode}
                   ${road}`
-                  : "Click here to view postcode"}
-              </span>
-            </Popup>
-          </Marker>
-        </MapContainer>
-      </div>
-      <div className= {css.eventDetails}>
-        <input className= {css.eventDetails} type="text" value={postcode} />
-        <input className= {css.eventDetails} type="text" value={road} />
-        <textarea class={css.autoExpand} rows='5' data-min-rows='3' autofocus onChange={(e) => describeEvent(e)} value={text}> </textarea>
-        <button className={css.buttonEvent} onClick={() => addEventToList(full)}>Create Event</button>
-       
+                    : "Click here to view postcode"}
+                </span>
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+        <div className={css.eventDetails}>
+          <input
+            className={css.eventDetailsInput}
+            type="text"
+            value={postcode}
+            placeholder="Click the pin on the map, drag it to pick the address"
+          />
+          <input
+            className={css.eventDetailsInput}
+            type="text"
+            value={road}
+            placeholder="Click the pin on the map, drag it to pick the address"
+          />
+          <textarea
+            class={css.autoExpand}
+            rows="5"
+            min-rows="3"
+            
+            autofocus
+            onChange={(e) => describeEvent(e)}
+            value={text}
+          >
+            {" "}
+          </textarea>
+          <button
+            className={css.buttonEvent}
+            onClick={() => addEventToList(full)}
+          >
+            Create Event
+          </button>
+
           {events.map((item, index) => (
             <div className={css.cardEvent}>
-            <p key={index}>{item[0]} {item[1]}</p>
-            <p key={index}>{item[2]}</p>
+              <p key={index}>
+                Address: {item[0]} {item[1]}
+              </p>
+              <p key={index}>Details: {item[2]}</p>
             </div>
           ))}
-        
+        </div>
       </div>
     </div>
   );
