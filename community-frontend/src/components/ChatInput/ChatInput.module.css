@@ -1,0 +1,13 @@
+
+
+.input {
+    /* border: solid goldenrod; */
+    display: flex;
+    flex-direction: column;
+    background: #f7f7f7;
+    padding: 1em;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin-left: 3ch;
+    width: 40vh;
+  }
