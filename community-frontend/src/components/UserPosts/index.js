@@ -5,6 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 function UserPosts() {
+  const [showSeeMore, setShowSeeMore] = useState(false);
   const [click, setClick] = useState(false);
   const [posts, setPosts] = useState([]);
   const [postChange, setPostChange] = useState(false);
@@ -13,6 +14,10 @@ function UserPosts() {
   const { user } = useAuth0();
 
   useEffect(() => getPost(), [postChange, click]); //need to add empty dependency array (without it it is an infinite loop)
+
+  function seeMoreShowOrHide() {
+    setShowSeeMore(true);
+  }
 
   async function getPost() {
     const response = await fetch("https://localhost:5001/posts");
@@ -51,21 +56,21 @@ function UserPosts() {
                 <item className={css.contentBox}>
                   {readMore
                     ? post.content
-                    : `${post.content.substring(0, 10)}...`}
-                </item>
-
-                <br></br>
-                <div className={css.buttonDiv}>
+                    : `${post.content.substring(0, 150)}...`}
                   <button
+                    hidden={post.content.length < 150}
                     className={css.readMoreButton}
                     onClick={() => setReadMore(!readMore)}
                   >
                     {readMore ? "show less" : "  read more"}
                   </button>
+                </item>
 
+                <br></br>
+                <div className={css.buttonDiv}>
                   <button
                     className={css.deleteButton}
-                    disabled={post.name !== user.name}
+                    hidden={post.name !== user.name}
                     onClick={() => handleClick(post.id)}
                   >
                     {<DeleteIcon />}
