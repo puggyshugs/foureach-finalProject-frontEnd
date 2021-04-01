@@ -5,6 +5,7 @@ import { attribution, tileUrl, defaultMapState } from "../utils/Utils";
 import "leaflet/dist/leaflet.css";
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import { Icon } from "leaflet";
+import { MDBInput } from "mdbreact";
 
 function DemoMap() {
   const eventsList = [
@@ -13,14 +14,14 @@ function DemoMap() {
       ["Abbey End Car Park"],
       [
         "5-week Beginners photography course on 18th April 2020 at 18:00-Everything to get off Automatic mode and learn how to be more creative with Composition and Camera",
-      ]
+      ],
     ],
     [
       ["CV34 7NV"],
       ["Ashley Main Road"],
       [
         "Street dance performance  on 24th April 2020 at 14:00 - Pick your favorite trainers and come with a high energy to learn basic steps and movements.",
-      ]
+      ],
     ],
   ];
 
@@ -144,40 +145,38 @@ function DemoMap() {
             className={css.eventDetailsInput}
             type="text"
             value={postcode}
-            placeholder="Click the pin on the map, drag it to pick the address"
+            placeholder="Postcode of the event..."
           />
           <input
             className={css.eventDetailsInput}
             type="text"
             value={road}
-            placeholder="Click the pin on the map, drag it to pick the address"
+            placeholder="Address of the event..."
           />
-          <textarea
-            class={css.autoExpand}
-            rows="5"
-            min-rows="3"
-            
-            autofocus
+          <MDBInput
+            className={css.inputField}
+            type="textarea"
+            label="Type details about event..."
+            rows="4"
+            icon="pencil-alt"
             onChange={(e) => describeEvent(e)}
-            value={text}
-          >
-            {" "}
-          </textarea>
+          />
           <button
             className={css.buttonEvent}
             onClick={() => addEventToList(full)}
           >
             Create Event
           </button>
-
-          {events.map((item, index) => (
-            <div className={css.cardEvent}>
-              <p key={index}>
-                Address: {item[0]} {item[1]}
-              </p>
-              <p key={index}>Details: {item[2]}</p>
-            </div>
-          ))}
+          <div className={css.scroll}>
+            {events.map((item, index) => (
+              <div className={css.cardEvent}>
+                <p key={index}>
+                  Address: {item[0]} {item[1]}
+                </p>
+                <p key={index}>Details: {item[2]}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
