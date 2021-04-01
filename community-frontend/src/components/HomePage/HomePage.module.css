@@ -3,7 +3,7 @@
 .homePageContainer {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to top, #b3e6e7 54%, #125048 100%);
+  background: linear-gradient(to top, #b88b8b 20%, #9df5e2 100%);
   /* border: solid goldenrod; */
   justify-content: center;
   flex-wrap: wrap;
@@ -15,10 +15,11 @@
   /* border: solid goldenrod; */
   align-self: center;
   margin: 10px;
+  margin-top: 30px;
   font-size: 50px;
   padding: 0.5em;
   background: #f7f7f7;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
-  margin-top: 30px;
+  margin-top: 7px;
 }

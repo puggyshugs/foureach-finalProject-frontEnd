@@ -1,0 +1,19 @@
+.mainChatContainer {
+  display: flex;
+  flex-direction: row;
+  /* border: solid goldenrod; */
+  justify-content: center;
+  min-height: 100vh;
+  background: slategray;
+  align-items: baseline;
+}
+
+.inputAndWindowContainer {
+  display: flex;
+  margin-top: 60px;
+  flex-direction: row;
+  /* border: solid goldenrod; */
+  justify-content: center;
+  align-items: baseline;
+  align-content: space-around;
+}

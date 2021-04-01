@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import css from "./ChatInput.module.css";
+import { MDBInput } from "mdbreact";
+import { ChatIcon } from "@chakra-ui/icons";
+import { Button } from "@chakra-ui/react";
 
 function ChatInput(props) {
   // const [userName, setUserName] = useState("");
@@ -8,7 +12,7 @@ function ChatInput(props) {
   const personName = user.name;
   const [message, setMessage] = useState("");
 
-  function onSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
 
     //const isUserProvided = user && user !== "";
@@ -42,26 +46,28 @@ function ChatInput(props) {
   // }
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="user">User:</label>
-        <br />
-        <input type="text" value={personName} />
-        <br />
-        <label htmlFor="message">Message:</label>
-        <br />
-        <input
-          type="text"
-          id="message"
-          name="message"
+    <div className={css.chatInputContainer}>
+      <form>
+        <h5>{personName} </h5>
+
+        <MDBInput
+          className={css.inputField}
+          type="textarea"
+          label="Type notification..."
+          rows="2"
+          icon="pencil-alt"
           value={message}
           onChange={handleChange}
         />
-        <br />
-        <br />
-        <button>Submit</button>
+        <Button
+          onClick={handleClick}
+          leftIcon={<ChatIcon />}
+          className={css.submitButton}
+        >
+          Send Message
+        </Button>
       </form>
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap");
 
 .appContainer {
   display: flex;
@@ -6,39 +6,41 @@
   min-height: 100vh;
   justify-content: center;
   flex-direction: column;
-  color: black
+  color: black;
 }
 
 .navBar {
   align-content: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  /* justify-items: space-around; */
   margin-bottom: 0px;
-  background:black
+  background: black;
 }
-.text{
+.text {
   color: rgb(0, 0, 0);
 }
 
-.bars{
-  
-  padding: 7px;
+.bars {
+  padding: 2px;
+  padding-bottom: 0px;
   color: rgb(0, 0, 0);
-  border-radius: 15px;
-  background: linear-gradient(to right, #F7F7F7 54%, #E8F4FC 100%);
-  font-family: 'Nunito', sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(to right, #f7f7f7 54%, #e8f4fc 100%);
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
-  font-size: larger;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  
+  font-size: small;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.bars:hover{
-  background:linear-gradient(to bottom, #81e2ff 5%, #d5f3ff 100%);
+.bars:hover {
+  background: linear-gradient(to bottom, #81e2ff 5%, #d5f3ff 100%);
   color: rgba(0, 0, 0, 0.6);
-  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
-               0px -5px 35px rgba(255,255,255,0.3);
-
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
 }
