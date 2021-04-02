@@ -1,50 +1,35 @@
+.title {
+  margin-top: 5vmin;
+  margin-bottom: 1.2vmin;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .LandingPage {
   text-align: center;
-}
-/* 
-.LandingPage_logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.LandingPage_logo2 {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .imageContainer {
   width: 40vmin;
   height: 40vmin;
   position: relative;
-  display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8vmin;
 }
-/* 
-.box {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
 
 .overlay {
-  z-index: 1;
-  margin: 0;
+  z-index: 10;
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: -10vmin 0 0 -10vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {

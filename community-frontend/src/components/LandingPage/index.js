@@ -7,14 +7,16 @@ function LandingPage() {
   return (
     <>
       <div className={css.LandingPage}>
-        <h1>Title</h1>
-        <p>Here is a brief description of the community app</p>
-        <div className={css.imageContainer}>
-          <div>
-            <img className={css.LandingPage_logo} src={logo} alt="logo" />
-          </div>
-          <div className={css.overlay.LandingPage_logo2}>
-            <LoginButton />
+        <div>
+          <h1 className={css.title}>mUe</h1>
+          <p>together we do more</p>
+          <div className={css.imageContainer}>
+            <div>
+              <img className={css.LandingPage_logo} src={logo} alt="logo" />
+            </div>
+            <div className={css.overlay}>
+              <LoginButton />
+            </div>
           </div>
         </div>
       </div>

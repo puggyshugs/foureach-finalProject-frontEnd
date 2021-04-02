@@ -1,3 +1,4 @@
+
 .chatInputContainer {
   display: flex;
   flex-direction: column;
@@ -24,3 +25,4 @@
   padding-bottom: 3.5px;
   font-family: "Nunito", sans-serif;
 }
+
