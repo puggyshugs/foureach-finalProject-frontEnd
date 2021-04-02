@@ -7,7 +7,8 @@ function LandingPage() {
   return (
     <>
       <div className={css.LandingPage}>
-        <div>
+        <div className={css.paper}>
+          
           <h1 className={css.title}>mUe</h1>
           <p>together we do more</p>
           <div className={css.imageContainer}>
@@ -18,7 +19,7 @@ function LandingPage() {
               <LoginButton />
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </>
   );
