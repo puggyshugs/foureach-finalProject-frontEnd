@@ -3,11 +3,26 @@
 .homePageContainer {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to top, #b88b8b 20%, #9df5e2 100%);
+  background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   /* border: solid goldenrod; */
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
+}
+.homePage_logo {
+  height: 170px;
+  width: 170px;
+  margin-right: 10px;
+}
+
+.titleAndLogoContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
 }
 
 .title {
