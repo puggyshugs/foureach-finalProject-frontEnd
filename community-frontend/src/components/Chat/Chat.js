@@ -111,6 +111,7 @@ function Chat() {
         </div>
         <div className={css.chatWindowHover}>
           <ChatWindow chat={chat} />
+          <Message  message={currentMessage}/>
         </div>
       </div>
     </div>
