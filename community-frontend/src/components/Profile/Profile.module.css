@@ -13,6 +13,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     justify-self: center;
     align-self: center;  
+    padding: 40px;
+ 
 }
 
 .image{
@@ -30,12 +32,14 @@
   box-shadow: var(--dark-shadow);
   justify-self: center;
 }
-p{
-   align-items: center;
-   text-align: center;
+.bioText{
+  
+   word-wrap: break-word;
+   width: 200px;
+   padding-top: 10px;
 }
 
-h2{
+.profileName{
     align-items: center;
     text-align: center;
 }

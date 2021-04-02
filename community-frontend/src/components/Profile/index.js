@@ -1,23 +1,42 @@
-import React from "react";
+import {useState} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import css from "./Profile.module.css";
+import { MDBInput } from "mdbreact";
+import { StatHelpText } from "@chakra-ui/stat";
 
 const Profile = () => {
   const { loading, user } = useAuth0();
-
+  const[bio, setBio] = useState('');
+  const[text, setText] = useState('');
+   
   if (loading || !user) {
     return <div>Loading...</div>;
   }
+  function updateBio(e){
+    setBio(e.target.value)
+  }
+   
+  function addToBio(){
+
+    setText(bio)
+  }
+  
 
   return (
     <div className={css.profilePageContainer}>
     <div className={css.profileInfoContainer}>
       <img className={css.image} src={user.picture} alt="profile"></img>
-      <h2>{user.name}</h2>
-      <p>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
+      <h2 className={css.profileName}>{user.name}</h2>
+      <MDBInput
+        className={css.inputField}
+        type="textarea"
+        label="Type notification..."
+        rows="2"
+        icon="pencil-alt"
+        onChange={(e) => updateBio(e)}
+      />
+      <button onClick={() => addToBio(text)}>Add bio</button>
+      <p className={css.bioText}>{text}</p>
       </div>
     </div>
   );
