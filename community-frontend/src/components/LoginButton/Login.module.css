@@ -10,4 +10,7 @@
 
 }
 
+.login:focus {
+    outline: none;
+}
 
