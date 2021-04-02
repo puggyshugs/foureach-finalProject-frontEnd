@@ -1,59 +1,55 @@
-.main{
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.main {
     display: flex;
     border: solid black;
     margin-top: 0px;
-    background-image: linear-gradient(to left, rgb(182, 192, 201) , slategray);
-}
+    min-height: 100vh;
+    background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-.container{
-    display: flex;
+  }
+  
+  .container {
+    /* display: flex; */
     flex-direction: column;
-    border: solid rgb(191, 209, 212);
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 700px;
-    margin-bottom: 10px;
-    padding: 3px;
-    background: linear-gradient(to right, #F7F7F7 54%, #E8F4FC 100%);
-}
+    
+    border-radius: 25px;
+    margin-top: 50px; 
+    margin-left: 30px;
 
-.map{
+    /* margin-right: 200vh; */
+    /* margin-bottom: 10px; */
+    justify-self: center;
+    align-self: center;
+    width: 700px;
+    height: 660px;
+    padding: 3px;
+    background: #f7f7f7;
+
+  }
+  /* .map {
     display: flex;
-    justify-content:center
-}
-.eventDetails{
+    justify-content: center;
+  } */
+  .eventDetails {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
-   
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
     margin-top: 5px;
-   
-    
-}
-
-.autoExpand{  
-    display: block;
-    box-sizing: padding-box;
-    overflow: hidden;
-    font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(black, .3);
-    border: solid rgb(0, 95, 150);
-    
-}
-.eventDetailsInput{
-   border-width: 0;
-   border-radius: 30px;
-   background: linear-gradient(to right, #d6edf1 54%, #afdbf8 100%);
+  }
+  .eventDetailsInput {
+    border-width: 0;
+    border-radius: 25px;
+    background: #f7f7f7;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -62,38 +58,65 @@
     margin-right: 10px;
     margin-bottom: 7px;
     margin-top: -2px;
-}
-
-  
-.buttonEvent {
-	box-shadow: 3px 4px 0px 0px #046fb6;
-	background:linear-gradient(to bottom, #8affff 5%, #14e0d6 100%);
-	background-color:#95fbff;
-	border-radius:25px;
-	border:1px solid #0a8dd8;
-	color:#101561;
-	font-family:Arial;
-	font-size:17px;
-	width: 120px;
-	text-shadow:0px 1px 0px #143b75;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Nunito", sans-serif;
+  }
+  .buttonEvent {
+    background: linear-gradient(
+        to right,
+        hsl(202, 90%, 88%) 50%,
+        rgb(110, 202, 255) 100%
+      );
+      border-radius: 25px;
+      padding-left: 7px;
+      padding-right: 7px;
+      padding-top: 3.5px;
+      padding-bottom: 3.5px;
+      font-family: "Nunito", sans-serif;
+      width: 120px;
     align-self: center;
-  
-}
-.buttonEvent:hover {
-	background:linear-gradient(to bottom, #079eda 5%, #8cffff 100%);
-	background-color:#2471e4;
-}
-
-.cardEvent{
+  }
+  .buttonEvent:hover {
+    background: linear-gradient(to bottom, #079eda 5%, #8cffff 100%);
+    background-color: #2471e4;
+  }
+  .cardEvent {
     margin-top: 10px;
     text-align: center;
-    background: linear-gradient(to right, #ebfcff 54%,  #a5dafd 100%);
-    border-radius: 50px;
-   
-}
+    background: #f7f7f7;
+    border-radius: 25px;
+    margin-right: 10px;
+    margin-left: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Nunito", sans-serif;
 
-.scroll{
+  }
+  .scroll {
     overflow-y: scroll;
-    height: 200px;
+    height: 330px;
+    margin-top: 15px;
+  }
+  
+.cardEventAddress {
+  padding-top: 10px;
+  font-weight: 600;
+}
+.cardEventDetails{
+    padding-bottom: 10px;
 }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

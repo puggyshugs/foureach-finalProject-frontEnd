@@ -140,6 +140,7 @@ function DemoMap() {
             </Marker>
           </MapContainer>
         </div>
+        <div className={css.eventsDetailsContainer}>
         <div className={css.eventDetails}>
           <input
             className={css.eventDetailsInput}
@@ -170,12 +171,13 @@ function DemoMap() {
           <div className={css.scroll}>
             {events.map((item, index) => (
               <div className={css.cardEvent}>
-                <p key={index}>
+                <p className={css.cardEventAddress}key={index}>
                   Address: {item[0]} {item[1]}
                 </p>
-                <p key={index}>Details: {item[2]}</p>
+                <p className={css.cardEventDetails} key={index}>Details: {item[2]}</p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>
