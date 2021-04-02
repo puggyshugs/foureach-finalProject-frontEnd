@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HubConnectionBuilder } from "@microsoft/signalr";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import css from "./Chat.module.css";
 import ChatWindow from "../ChatWindow/ChatWindow";
 import ChatInput from "../ChatInput/ChatInput";
 import Message from "../Message/Message";
@@ -104,11 +104,15 @@ function Chat() {
   }
 
   return (
-    <div>
-      <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
-      <hr />
-      <ChatWindow chat={chat} />
-      <Message message={currentMessage} />
+    <div className={css.mainChatContainer}>
+      <div className={css.inputAndWindowContainer}>
+        <div className={css.chatInputHoverMode}>
+          <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
+        </div>
+        <div className={css.chatWindowHover}>
+          <ChatWindow chat={chat} />
+        </div>
+      </div>
     </div>
   );
 }

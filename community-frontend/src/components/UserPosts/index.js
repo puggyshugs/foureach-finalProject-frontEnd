@@ -41,9 +41,7 @@ function UserPosts() {
     //return text;
   }
 
-
-//  makeaMap() { if myLat[i] || myLng[i] == null }(dontmakeamap) else (makeamap)
-
+  //  makeaMap() { if myLat[i] || myLng[i] == null }(dontmakeamap) else (makeamap)
 
   return (
     <div className={css.outerDivContainer}>
@@ -54,19 +52,20 @@ function UserPosts() {
               <li className={css.listItemContainer} key={i}>
                 <item className={css.nameTitle}>{post.name}</item>
                 <item className={css.contentBox}>
-                  {readMore
+                  {!readMore
                     ? post.content
-                    : `${post.content.substring(0, 150)}...`}
+                    : `${post.content.substring(0, 150)}&hellip;`}
+
                   <button
                     hidden={post.content.length < 150}
                     className={css.readMoreButton}
                     onClick={() => setReadMore(!readMore)}
                   >
-                    {readMore ? "show less" : "  read more"}
+                    {readMore ? "read more" : "show less"}
                   </button>
                 </item>
 
-                <br></br>
+                {/* <br></br> */}
                 <div className={css.buttonDiv}>
                   <button
                     className={css.deleteButton}
