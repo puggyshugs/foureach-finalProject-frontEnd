@@ -53,6 +53,7 @@ function Chat() {
             // updatedChat.unshift(message);
             // const messageAddedToChat = [message, ...updatedChat];
             // setChat(messageAddedToChat);
+            // comment;
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
