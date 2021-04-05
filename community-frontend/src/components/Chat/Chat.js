@@ -115,9 +115,9 @@ function Chat() {
       <div className={css.inputAndWindowContainer}>
         <div className={css.chatInputHoverMode}>
           <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
-          <IsTypingMessage message={currentMessage} />
         </div>
         <div className={css.chatWindowHover}>
+          <IsTypingMessage message={currentMessage} />
           <ChatWindow chat={chat} />
         </div>
       </div>
