@@ -55,8 +55,14 @@ function UserPosts() {
                   {readMore ? (
                     post.content
                   ) : (
-                    <div>{
-                      post.content.substring(0, 150)&hellip;}</div>
+                    <>
+                      <div>
+                        {post.content.length < 150 && post.content}
+                      </div>
+                      <div hidden={post.content.length < 150}>
+                        {post.content.length > 150 && post.content.match(/(.{1,99}\w)\s/)[1]}&hellip;
+                      </div>
+                    </>
                   )}
 
                   <button
