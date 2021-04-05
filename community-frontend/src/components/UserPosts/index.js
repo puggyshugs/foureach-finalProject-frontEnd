@@ -52,16 +52,19 @@ function UserPosts() {
               <li className={css.listItemContainer} key={i}>
                 <item className={css.nameTitle}>{post.name}</item>
                 <item className={css.contentBox}>
-                  {!readMore
-                    ? post.content
-                    : `${post.content.substring(0, 150)}&hellip;`}
+                  {readMore ? (
+                    post.content
+                  ) : (
+                    <div>{
+                      post.content.substring(0, 150)&hellip;}</div>
+                  )}
 
                   <button
                     hidden={post.content.length < 150}
                     className={css.readMoreButton}
                     onClick={() => setReadMore(!readMore)}
                   >
-                    {readMore ? "read more" : "show less"}
+                    {!readMore ? "read more" : "show less"}
                   </button>
                 </item>
 

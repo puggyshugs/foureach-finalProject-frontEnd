@@ -6,7 +6,6 @@ import { MDBInput } from "mdbreact";
 import { ChatIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 
-
 function ChatInput(props) {
   // const [userName, setUserName] = useState("");
   const { user } = useAuth0();
@@ -48,7 +47,6 @@ function ChatInput(props) {
   // }
 
   return (
-
     <div className={css.chatInputContainer}>
       <form>
         <h5>{personName} </h5>
@@ -69,7 +67,6 @@ function ChatInput(props) {
         >
           Send Message
         </Button>
-
       </form>
     </div>
   );

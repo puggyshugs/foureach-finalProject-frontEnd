@@ -110,8 +110,8 @@ function Chat() {
           <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
         </div>
         <div className={css.chatWindowHover}>
+          <Message message={currentMessage} />
           <ChatWindow chat={chat} />
-          <Message  message={currentMessage}/>
         </div>
       </div>
     </div>
