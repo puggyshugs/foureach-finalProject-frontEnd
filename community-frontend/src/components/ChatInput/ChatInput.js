@@ -6,7 +6,6 @@ import { MDBInput } from "mdbreact";
 import { ChatIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 
-
 function ChatInput(props) {
   // const [userName, setUserName] = useState("");
   const { user } = useAuth0();
@@ -33,22 +32,14 @@ function ChatInput(props) {
     const isMessageProvided = message && message !== "" && message.length !== 0;
     if (isMessageProvided) {
       props.sendTyper(personName, message);
+      setTimeout(function () {
+        props.sendTyper(null);
+      }, 10000);
     }
     setMessage(e.target.value);
   }
 
-  // async function handleClick() {
-  //   const response = await fetch("https://localhost:5001/chats", {
-  //     method: "POST",
-  //     body: JSON.stringify({ name: user.name, message: message }),
-  //     headers: { "Content-type": "application/json; charset=UTF-8" },
-  //   });
-  //   const resData = await response.json();
-  //   console.log(resData);
-  // }
-
   return (
-
     <div className={css.chatInputContainer}>
       <form>
         <h5>{personName} </h5>
@@ -69,7 +60,6 @@ function ChatInput(props) {
         >
           Send Message
         </Button>
-
       </form>
     </div>
   );

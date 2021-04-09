@@ -52,16 +52,25 @@ function UserPosts() {
               <li className={css.listItemContainer} key={i}>
                 <item className={css.nameTitle}>{post.name}</item>
                 <item className={css.contentBox}>
-                  {!readMore
-                    ? post.content
-                    : `${post.content.substring(0, 150)}&hellip;`}
+                  {readMore ? (
+                    post.content
+                  ) : (
+                    <>
+                      <div>
+                        {post.content.length < 150 && post.content}
+                      </div>
+                      <div hidden={post.content.length < 150}>
+                        {post.content.length > 150 && post.content.match(/(.{1,99}\w)\s/)[1]}&hellip;
+                      </div>
+                    </>
+                  )}
 
                   <button
                     hidden={post.content.length < 150}
                     className={css.readMoreButton}
                     onClick={() => setReadMore(!readMore)}
                   >
-                    {readMore ? "read more" : "show less"}
+                    {!readMore ? "read more" : "show less"}
                   </button>
                 </item>
 

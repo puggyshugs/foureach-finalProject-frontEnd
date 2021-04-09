@@ -30,3 +30,7 @@
 .chatWindowHover {
   width: 40em;
 }
+
+.isTypingMessage {
+  height: 300px;
+}

@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import css from "./Chat.module.css";
 import ChatWindow from "../ChatWindow/ChatWindow";
 import ChatInput from "../ChatInput/ChatInput";
-import Message from "../Message/Message";
+import IsTypingMessage from "../IsTypingMessage/IsTypingMessage";
 
 function Chat() {
   const [connection, setConnection] = useState(null);
@@ -53,6 +53,7 @@ function Chat() {
             // updatedChat.unshift(message);
             // const messageAddedToChat = [message, ...updatedChat];
             // setChat(messageAddedToChat);
+            // comment;
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
@@ -82,12 +83,18 @@ function Chat() {
       alert("No connection to server yet.");
     }
   }
-
   async function sendTyper(user) {
-    const chatMessage = {
-      name: user,
-      message: `${user} is typing...`,
-    };
+    if (user === null) {
+      var chatMessage = {
+        name: ` `,
+        message: ` `,
+      };
+    } else {
+      chatMessage = {
+        name: user,
+        message: `${user} is typing...`,
+      };
+    }
 
     if (connection.connectionStarted && send === false) {
       try {
@@ -98,9 +105,9 @@ function Chat() {
     } else {
       alert("No connection to server yet.");
     }
-    setTimeout(function () {
-      setCurrentMessage("");
-    }, 4000);
+    // setTimeout(function () {
+    //   setCurrentMessage("");
+    // }, 10000);
   }
 
   return (
@@ -110,8 +117,8 @@ function Chat() {
           <ChatInput sendMessage={sendMessage} sendTyper={sendTyper} />
         </div>
         <div className={css.chatWindowHover}>
+          <IsTypingMessage message={currentMessage} />
           <ChatWindow chat={chat} />
-          <Message  message={currentMessage}/>
         </div>
       </div>
     </div>

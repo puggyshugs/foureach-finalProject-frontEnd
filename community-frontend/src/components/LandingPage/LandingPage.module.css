@@ -1,7 +1,7 @@
 .title {
   padding-top: 5vmin;
   margin-bottom: 1.5vmin;
-  color:rgba(255, 0, 0, 0.698);
+  color:rgba(228, 21, 21, 0.698);
 }
 
 
@@ -43,6 +43,13 @@
   left: 50%;
   margin: -10vmin 0 0 -10vmin;
 }
+
+
+
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .LandingPage_logo {
