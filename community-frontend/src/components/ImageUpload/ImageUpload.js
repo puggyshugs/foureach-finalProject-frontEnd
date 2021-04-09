@@ -5,7 +5,8 @@ function ImageUpload(){
     const[image, setImage] = useState('');
     const[loading, setLoading] = useState(false)
 
-    async uploadImage(e){
+    const uploadImage = async e =>
+    {
         const files = e.target.files;
         const data = new FormData();
         data.append('file', files[0]);
@@ -19,14 +20,18 @@ function ImageUpload(){
         )
         const file = await res.json();
         setImage(file.secure_url);
-        setImage(false)
+        setLoading(false);
 
     }
 
     return(
-
+        <div>
+            <h1>Upload Image</h1>
+            <input type="file" name="file" onChange={uploadImage} />
+            {loading ? (<h3>Loading...</h3>) : (<img src={image} style={{width: '300px'}} alt='userimage'/>)}
+        </div>
     )
 
 }
 
-export ImageUpload;
+export default ImageUpload;

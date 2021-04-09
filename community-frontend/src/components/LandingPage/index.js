@@ -2,6 +2,7 @@ import LoginButton from "../LoginButton";
 import React from "react";
 import logo from "../../Images/landingpageimage.svg";
 import css from "./LandingPage.module.css";
+import ImageUpload from "../ImageUpload/ImageUpload";
 
 function LandingPage() {
   return (
@@ -20,6 +21,7 @@ function LandingPage() {
             </div>
           </div>
           </div>
+          <ImageUpload />
       </div>
     </>
   );
