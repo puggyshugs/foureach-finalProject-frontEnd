@@ -5,7 +5,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 function UserPosts() {
-  const [showSeeMore, setShowSeeMore] = useState(false);
   const [click, setClick] = useState(false);
   const [posts, setPosts] = useState([]);
   const [postChange, setPostChange] = useState(false);
@@ -15,12 +14,9 @@ function UserPosts() {
 
   useEffect(() => getPost(), [postChange, click]); //need to add empty dependency array (without it it is an infinite loop)
 
-  function seeMoreShowOrHide() {
-    setShowSeeMore(true);
-  }
-
   async function getPost() {
-    const response = await fetch("https://localhost:5001/posts");
+    console.log(process.env.REACT_APP_BACKEND_POSTS_URL);
+    const response = await fetch(process.env.REACT_APP_BACKEND_POSTS_URL);
     const resData = await response.json();
     //return data;
     setPosts(resData);
@@ -28,14 +24,17 @@ function UserPosts() {
   }
 
   async function handleClick(id) {
-    const response = await fetch(`https://localhost:5001/posts/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-    // const resData = await response.json();
-    // console.log(resData);
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_POSTS_URL}/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    );
+    const resData = await response.json();
+    console.log(resData);
 
     setClick(!click);
     //return text;
@@ -56,11 +55,11 @@ function UserPosts() {
                     post.content
                   ) : (
                     <>
-                      <div>
-                        {post.content.length < 150 && post.content}
-                      </div>
+                      <div>{post.content.length < 150 && post.content}</div>
                       <div hidden={post.content.length < 150}>
-                        {post.content.length > 150 && post.content.match(/(.{1,99}\w)\s/)[1]}&hellip;
+                        {post.content.length > 150 &&
+                          post.content.match(/(.{1,99}\w)\s/)[1]}
+                        &hellip;
                       </div>
                     </>
                   )}

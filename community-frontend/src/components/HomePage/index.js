@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./HomePage.module.css";
-import PostsInput from "../PostsInput/index";
 import UserPosts from "../UserPosts/index";
 import logo from "../../Images/landingpageimage.svg";
 
