@@ -61,8 +61,12 @@ function PostsInput({ setPostChange, postChange }) {
         icon="pencil-alt"
         onChange={(e) => updateText(e)}
       />
-     <input type="file" name="file" onChange={uploadImage} />
-     <img src={image} style={{width: '300px'}} alt='userimage'/>
+      <div className={css.postImage}>
+      <label for="files" className={css.sendMessageButton}>Add an image?</label>
+
+     <input className={css.postButton} id="files" type="file" name="file"  onChange={uploadImage} />
+     <img src={image} hidden={!image} style={{width: '300px'}} alt='userimage'/>
+     </div>
       <Button
         onClick={() => handleClick(text, image)}
         leftIcon={<ChatIcon />}
