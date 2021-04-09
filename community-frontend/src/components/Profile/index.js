@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import css from "./Profile.module.css";
 import { MDBInput } from "mdbreact";
-import { StatHelpText } from "@chakra-ui/stat";
 
 const Profile = () => {
   const { loading, user } = useAuth0();

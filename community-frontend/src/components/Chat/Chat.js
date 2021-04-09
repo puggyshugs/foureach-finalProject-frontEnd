@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HubConnectionBuilder } from "@microsoft/signalr";
-import { useAuth0 } from "@auth0/auth0-react";
 import css from "./Chat.module.css";
 import ChatWindow from "../ChatWindow/ChatWindow";
 import ChatInput from "../ChatInput/ChatInput";
@@ -11,15 +10,14 @@ function Chat() {
   const [chat, setChat] = useState([]);
   const latestChat = useRef(null);
 
-  const [currentTyper, setCurrentTyper] = useState(null);
+  const [, setCurrentTyper] = useState(null);
   const [currentMessage, setCurrentMessage] = useState(null);
   const [send, setSend] = useState(false);
 
   // get old chats from database on page load.
   async function getOldChat() {
-    const response = await fetch("https://localhost:5001/Chats");
+    const response = await fetch(process.env.REACT_APP_BACKEND_CHAT_URL);
     const resData = await response.json();
-    console.log(resData);
     setChat(resData);
     return;
   }
@@ -28,13 +26,11 @@ function Chat() {
     getOldChat();
   }, []);
 
-  const { user } = useAuth0();
-
   latestChat.current = chat;
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl("https://localhost:5001/hubs/chat")
+      .withUrl(process.env.REACT_APP_BACKEND_CHAT_HUB_URL)
       .withAutomaticReconnect()
       .build();
 
@@ -57,7 +53,6 @@ function Chat() {
             setChat(updatedChat);
           });
           connection.on("ReceiveTyper", (user) => {
-            console.log(user);
             setCurrentTyper(user.name);
             setCurrentMessage(user.message);
           });
@@ -71,7 +66,6 @@ function Chat() {
       name: user,
       message: message,
     };
-    console.log(chatMessage);
     if (connection.connectionStarted) {
       try {
         (await connection.send("SendMessage", chatMessage)) && setSend(!send);
