@@ -1,5 +1,5 @@
 import css from "./Input.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button } from "@chakra-ui/react";
 import { ChatIcon } from "@chakra-ui/icons";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -14,7 +14,7 @@ function PostsInput({ setPostChange, postChange }) {
   }
 
   async function handleClick(content) {
-    const response = await fetch("https://localhost:5001/posts", {
+    const response = await fetch(process.env.REACT_APP_BACKEND_POSTS_URL, {
       method: "POST",
       body: JSON.stringify({ content: content, name: user.name }), // myLat and myLng
       headers: { "Content-type": "application/json; charset=UTF-8" },

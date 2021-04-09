@@ -36,7 +36,7 @@ function DemoMap() {
   const [position, setPosition] = useState(center);
   const [lat, setLat] = useState(center);
   const [long, setLong] = useState(center);
-  const [address, setAddress] = useState("Move me!");
+  const [, setAddress] = useState("Move me!");
   const [road, setRoad] = useState("");
   const [postcode, setPostcode] = useState("");
   const markerRef = useRef(center);
@@ -63,7 +63,7 @@ function DemoMap() {
   useEffect(() => {
     async function getLocation() {
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`
+        `${process.env.REACT_APP_OPEN_STREET_MAP_URL}/reverse?format=jsonv2&lat=${lat}&lon=${long}`
       );
       const data = await response.json();
       console.log(data);
@@ -78,7 +78,7 @@ function DemoMap() {
       } else setAddress("Move me!");
     }
     getLocation();
-  }, [lat]); // create an events component and have a map with pins that are showing
+  }, [lat, long]); // create an events component and have a map with pins that are showing
   //different locations for different events
 
   function describeEvent(e) {
@@ -142,43 +142,45 @@ function DemoMap() {
           </MapContainer>
         </div>
         <div className={css.eventsDetailsContainer}>
-        <div className={css.eventDetails}>
-          <input
-            className={css.eventDetailsInput}
-            type="text"
-            value={postcode}
-            placeholder="Postcode of the event..."
-          />
-          <input
-            className={css.eventDetailsInput}
-            type="text"
-            value={road}
-            placeholder="Address of the event..."
-          />
-          <MDBInput
-            className={css.inputField}
-            type="textarea"
-            label="Type details about event..."
-            rows="4"
-            icon="pencil-alt"
-            onChange={(e) => describeEvent(e)}
-          />
-          <button
-            className={css.buttonEvent}
-            onClick={() => addEventToList(full)}
-          >
-            Create Event
-          </button>
-          <div className={css.scroll}>
-            {events.map((item, index) => (
-              <div className={css.cardEvent}>
-                <p className={css.cardEventAddress}key={index}>
-                  Address: {item[0]} {item[1]}
-                </p>
-                <p className={css.cardEventDetails} key={index}>Details: {item[2]}</p>
-              </div>
-            ))}
-          </div>
+          <div className={css.eventDetails}>
+            <input
+              className={css.eventDetailsInput}
+              type="text"
+              value={postcode}
+              placeholder="Postcode of the event..."
+            />
+            <input
+              className={css.eventDetailsInput}
+              type="text"
+              value={road}
+              placeholder="Address of the event..."
+            />
+            <MDBInput
+              className={css.inputField}
+              type="textarea"
+              label="Type details about event..."
+              rows="4"
+              icon="pencil-alt"
+              onChange={(e) => describeEvent(e)}
+            />
+            <button
+              className={css.buttonEvent}
+              onClick={() => addEventToList(full)}
+            >
+              Create Event
+            </button>
+            <div className={css.scroll}>
+              {events.map((item, index) => (
+                <div className={css.cardEvent}>
+                  <p className={css.cardEventAddress} key={index}>
+                    Address: {item[0]} {item[1]}
+                  </p>
+                  <p className={css.cardEventDetails} key={index}>
+                    Details: {item[2]}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
