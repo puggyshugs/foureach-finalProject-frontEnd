@@ -83,6 +83,7 @@ function UserPosts() {
                     {<DeleteIcon />}
                   </button>
                 </div>
+                <img src={post.postImage} alt="userImage"/>
               </li>
             ))}
         </ul>
