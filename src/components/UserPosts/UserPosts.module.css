@@ -71,19 +71,6 @@
   /* border: solid blue; */
 }
 
-.contentBox {
-  margin-left: 7px;
-  margin-right: 27px;
-  padding-left: 7px;
-  padding-right: 7px;
-  /* padding-bottom: 50px; */
-  margin-top: 10px;
-  font-family: "Nunito", sans-serif;
-  border: solid goldenrod;
-  /* word-wrap: break-word; */
-  overflow-wrap: break-word;
-}
-
 .readMoreButton {
   display: flex;
   align-self: flex-end;
@@ -93,6 +80,20 @@
   padding-bottom: 5px;
   font-size: small;
   /* border: solid blue; */
+}
+
+.contentBox {
+  margin-left: 7px;
+  margin-right: 27px;
+  padding-left: 7px;
+  padding-right: 7px;
+  width: 30vw;
+  /* padding-bottom: 50px; */
+  margin-top: 10px;
+  font-family: "Nunito", sans-serif;
+  /* border: solid goldenrod; */
+  /* word-wrap: break-word; */
+  overflow-wrap: break-word;
 }
 
 .buttonDiv {
@@ -105,6 +106,8 @@
 
 .imageMainContainer {
   height: 350px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 .imageMainContainerImage {
   max-height: 100%;
