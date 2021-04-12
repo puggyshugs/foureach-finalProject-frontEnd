@@ -82,6 +82,9 @@ function UserPosts() {
                   >
                     {<DeleteIcon />}
                   </button>
+                </div> 
+                <div className={css.imageMainContainer} hidden={!post.postImage}>
+                <img  className={css.imageMainContainerImage} src={post.postImage} alt="userImage"/>
                 </div>
               </li>
             ))}
