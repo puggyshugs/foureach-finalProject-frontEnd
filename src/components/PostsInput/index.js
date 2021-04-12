@@ -5,18 +5,40 @@ import { ChatIcon } from "@chakra-ui/icons";
 import { useAuth0 } from "@auth0/auth0-react";
 import { MDBInput } from "mdbreact";
 
+
 function PostsInput({ setPostChange, postChange }) {
   const [text, setText] = useState("");
+  const[image, setImage] = useState('');
   const { user } = useAuth0();
+
+  const uploadImage = async e =>
+  {
+      const files = e.target.files;
+      const data = new FormData();
+      data.append('file', files[0]);
+      data.append('upload_preset', 'imageupload')
+     
+      const res=await fetch('https://api.cloudinary.com/v1_1/dmxpnf9fs/image/upload',
+      {
+          method: 'POST',
+          body: data
+      }
+      )
+      const file = await res.json();
+      setImage(file.secure_url);
+ 
+
+  }
+
 
   function updateText(e) {
     setText(e.target.value);
   }
 
-  async function handleClick(content) {
+  async function handleClick(content, image) {
     const response = await fetch(process.env.REACT_APP_BACKEND_POSTS_URL, {
       method: "POST",
-      body: JSON.stringify({ content: content, name: user.name }), // myLat and myLng
+      body: JSON.stringify({ content: content, name: user.name, postImage: image}), // myLat and myLng
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     const resData = await response.json();
@@ -39,8 +61,14 @@ function PostsInput({ setPostChange, postChange }) {
         icon="pencil-alt"
         onChange={(e) => updateText(e)}
       />
+      <div className={css.postImage}>
+      <label for="files" className={css.sendMessageButton}>Add an image?</label>
+
+     <input className={css.postButton} id="files" type="file" name="file"  onChange={uploadImage} />
+     <img src={image} hidden={!image} style={{width: '300px'}} alt='userimage'/>
+     </div>
       <Button
-        onClick={() => handleClick(text)}
+        onClick={() => handleClick(text, image)}
         leftIcon={<ChatIcon />}
         className={css.sendMessageButton}
       >

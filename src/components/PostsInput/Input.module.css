@@ -29,3 +29,12 @@
 .inputTitle {
   font-family: "Nunito", sans-serif;
 }
+
+.postImage {
+  margin-bottom: 10px;
+}
+
+.postButton {
+  visibility:hidden;
+  background-color: crimson;
+}

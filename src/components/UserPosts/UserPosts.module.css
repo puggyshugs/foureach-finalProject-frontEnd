@@ -99,3 +99,16 @@
   align-self: flex-end;
   justify-self: flex-end;
 }
+
+
+
+.imageMainContainer {
+  height: 350px;
+}
+.imageMainContainerImage {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
