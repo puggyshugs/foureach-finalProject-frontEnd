@@ -71,6 +71,10 @@
   /* border: solid blue; */
 }
 
+.deleteButton:focus {
+  outline: none;
+}
+
 .readMoreButton {
   display: flex;
   align-self: flex-end;
