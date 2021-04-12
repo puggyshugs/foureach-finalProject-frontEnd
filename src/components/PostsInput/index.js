@@ -44,8 +44,8 @@ function PostsInput({ setPostChange, postChange }) {
     const resData = await response.json();
     setPostChange(!postChange);
     console.log({ resData });
-    //setText(resData.content);
-    // return text;
+    setText("");
+    setImage(null);
   }
 
   return (
@@ -59,13 +59,14 @@ function PostsInput({ setPostChange, postChange }) {
         label="Type notification..."
         rows="2"
         icon="pencil-alt"
+        value={text}
         onChange={(e) => updateText(e)}
       />
       <div className={css.postImage}>
       <label for="files" className={css.sendMessageButton}>Add an image?</label>
 
      <input className={css.postButton} id="files" type="file" name="file"  onChange={uploadImage} />
-     <img src={image} hidden={!image} style={{width: '300px'}} alt='userimage'/>
+     <img src={image} hidden={!image} style={{width: '300px'}} alt='user image'/>
      </div>
       <Button
         onClick={() => handleClick(text, image)}
