@@ -79,8 +79,9 @@
   /* padding-bottom: 50px; */
   margin-top: 10px;
   font-family: "Nunito", sans-serif;
-  /* border: solid goldenrod; */
-  word-wrap: break-word;
+  border: solid goldenrod;
+  /* word-wrap: break-word; */
+  overflow-wrap: break-word;
 }
 
 .readMoreButton {
