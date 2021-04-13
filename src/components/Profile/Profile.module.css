@@ -1,0 +1,70 @@
+.profilePageContainer {
+  display: flex;
+
+  flex-wrap: wrap;
+  min-height: 100vh;
+  justify-content: center;
+  background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.profileInfoContainer {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  justify-self: center;
+  align-self: center;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+}
+
+.image {
+  align-self: center;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+  padding: 5px;
+  background: rgb(0, 0, 0);
+  border: 1px solid rgba(25, 130, 201, 0.404);
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--dark-shadow);
+  justify-self: center;
+}
+.profileName {
+  align-items: center;
+  text-align: center;
+}
+
+.bioTextBox {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  justify-self: center;
+  align-self: center;
+  padding: 7px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.addBioButton {
+  background: rgb(255, 177, 153);
+  border-radius: 25px;
+  padding-left: 7px;
+  margin-left: 3px;
+  padding-right: 7px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  font-family: "Nunito", sans-serif;
+  /* opacity: 70%; */
+}
+
+.bioText {
+  word-wrap: break-word;
+  width: 300px;
+  padding-top: 10px;
+  box-shadow: var(--dark-shadow);
+}

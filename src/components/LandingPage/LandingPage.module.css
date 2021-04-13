@@ -1,0 +1,67 @@
+.title {
+  padding-top: 5vmin;
+  margin-bottom: 1.5vmin;
+  color:rgba(228, 21, 21, 0.698);
+}
+
+
+
+
+.paper{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  overflow: hidden;
+  
+
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.LandingPage {
+  text-align: center;
+}
+
+.imageContainer {
+  width: 40vmin;
+  height: 40vmin;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8vmin;
+}
+
+.overlay {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10vmin 0 0 -10vmin;
+}
+
+
+
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .LandingPage_logo {
+    animation: LandingPage_logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes LandingPage_logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

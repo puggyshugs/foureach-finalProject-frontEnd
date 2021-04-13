@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.input {
+  /* border: solid goldenrod; */
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  padding: 1em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  margin-left: 3ch;
+  width: 40vh;
+}
+
+.sendMessageButton {
+  background: linear-gradient(
+    to right,
+    hsl(202, 90%, 88%) 50%,
+    rgb(110, 202, 255) 100%
+    
+  );
+  border-radius: 25px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  font-family: "Nunito", sans-serif;
+}
+
+.sendMessageButton:active {
+  outline: none;
+  transition-duration: 2000ms;
+  transition-property: background-color;
+  background: red;
+    
+}
+
+.sendMessageButton:focus {
+  outline: none;
+}
+
+.inputTitle {
+  font-family: "Nunito", sans-serif;
+}
+
+.postImage {
+  margin-bottom: 10px;
+}
+
+.postButton {
+  visibility:hidden;
+  background-color: crimson;
+}

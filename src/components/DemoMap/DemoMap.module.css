@@ -1,0 +1,122 @@
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.main {
+    display: flex;
+    border: solid black;
+    margin-top: 0px;
+    min-height: 100vh;
+    background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  }
+  
+  .container {
+    /* display: flex; */
+    flex-direction: column;
+    
+    border-radius: 25px;
+    margin-top: 50px; 
+    margin-left: 30px;
+
+    /* margin-right: 200vh; */
+    /* margin-bottom: 10px; */
+    justify-self: center;
+    align-self: center;
+    width: 700px;
+    height: 660px;
+    padding: 3px;
+    background: #f7f7f7;
+
+  }
+  /* .map {
+    display: flex;
+    justify-content: center;
+  } */
+  .eventDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  .eventDetailsInput {
+    border-width: 0;
+    border-radius: 25px;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    margin-top: -2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Nunito", sans-serif;
+  }
+  .buttonEvent {
+    background: linear-gradient(
+        to right,
+        hsl(202, 90%, 88%) 50%,
+        rgb(110, 202, 255) 100%
+      );
+      border-radius: 25px;
+      padding-left: 7px;
+      padding-right: 7px;
+      padding-top: 3.5px;
+      padding-bottom: 3.5px;
+      font-family: "Nunito", sans-serif;
+      width: 120px;
+    align-self: center;
+  }
+  .buttonEvent:hover {
+    background: linear-gradient(to bottom, #079eda 5%, #8cffff 100%);
+    background-color: #2471e4;
+  }
+  .cardEvent {
+    margin-top: 10px;
+    text-align: center;
+    background: #f7f7f7;
+    border-radius: 25px;
+    margin-right: 10px;
+    margin-left: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Nunito", sans-serif;
+
+  }
+  .scroll {
+    overflow-y: scroll;
+    height: 330px;
+    margin-top: 15px;
+  }
+  
+.cardEventAddress {
+  padding-top: 10px;
+  font-weight: 600;
+}
+.cardEventDetails{
+    padding-bottom: 10px;
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
