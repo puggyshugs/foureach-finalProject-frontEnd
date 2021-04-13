@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.homePageContainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../Images/serenitywallpaperforprjoect.jpg);
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* border: solid goldenrod; */
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+.homePage_logo {
+  height: 170px;
+  width: 170px;
+  margin-right: 10px;
+}
+
+.titleAndLogoContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.title {
+  font-family: "Nunito", sans-serif;
+  /* border: solid goldenrod; */
+  align-self: center;
+  margin: 10px;
+  margin-top: 30px;
+  font-size: 50px;
+  padding: 0.5em;
+  background: #f7f7f7;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  margin-top: 7px;
+}
