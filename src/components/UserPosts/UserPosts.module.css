@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+.outerDivContainer {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  margin-top: 50px;
+  /* border: solid green; */
+}
+
+.postsDiv {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-around;
+  /* border: solid goldenrod; */
+  flex-direction: column;
+  max-width: 600em;
+  margin: auto 0;
+  background: #f7f7f7;
+  padding: 1em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+
+  width: 42em;
+  /* overflow: scroll; */
+
+  height: 600px;
+}
+
+.postList {
+  list-style-type: none;
+  overflow-y: scroll;
+  padding: 1vh 20px 1vh 0;
+}
+
+.listItemContainer {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  /* border: solid goldenrod; */
+  background: white;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+
+.nameTitle {
+  border-radius: 25px;
+  padding: 3.5px;
+  padding-left: 10px;
+  background: linear-gradient(
+    to right,
+    hsl(202, 90%, 88%) 50%,
+    rgb(110, 202, 255) 100%
+  );
+  margin-left: 7px;
+  margin-right: 7px;
+  font-family: "Nunito", sans-serif;
+  font-size: large;
+}
+
+.deleteButton {
+  align-self: flex-end;
+  flex-wrap: wrap;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  /* border: solid blue; */
+}
+
+.deleteButton:focus {
+  outline: none;
+}
+
+.readMoreButton {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+  flex-wrap: wrap;
+  padding-right: 7px;
+  padding-bottom: 5px;
+  font-size: small;
+  /* border: solid blue; */
+}
+
+.contentBox {
+  margin-left: 7px;
+  margin-right: 27px;
+  padding-left: 7px;
+  padding-right: 7px;
+  width: 30vw;
+  /* padding-bottom: 50px; */
+  margin-top: 10px;
+  font-family: "Nunito", sans-serif;
+  /* border: solid goldenrod; */
+  /* word-wrap: break-word; */
+  overflow-wrap: break-word;
+}
+
+.buttonDiv {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+
+
+.imageMainContainer {
+  height: 350px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.imageMainContainerImage {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
