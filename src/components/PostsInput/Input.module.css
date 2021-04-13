@@ -17,6 +17,7 @@
     to right,
     hsl(202, 90%, 88%) 50%,
     rgb(110, 202, 255) 100%
+    
   );
   border-radius: 25px;
   padding-left: 7px;
@@ -24,6 +25,18 @@
   padding-top: 3.5px;
   padding-bottom: 3.5px;
   font-family: "Nunito", sans-serif;
+}
+
+.sendMessageButton:active {
+  outline: none;
+  transition-duration: 2000ms;
+  transition-property: background-color;
+  background: red;
+    
+}
+
+.sendMessageButton:focus {
+  outline: none;
 }
 
 .inputTitle {

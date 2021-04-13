@@ -5,26 +5,27 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 function UserPosts() {
-  const [click, setClick] = useState(false);
+
   const [posts, setPosts] = useState([]);
   const [postChange, setPostChange] = useState(false);
   const [readMore, setReadMore] = useState(false);
 
   const { user } = useAuth0();
 
-  useEffect(() => getPost(), [postChange, click]); //need to add empty dependency array (without it it is an infinite loop)
+  useEffect(() => getPost(), [postChange]); //need to add empty dependency array (without it it is an infinite loop)
 
   async function getPost() {
     console.log(process.env.REACT_APP_BACKEND_POSTS_URL);
     const response = await fetch(process.env.REACT_APP_BACKEND_POSTS_URL);
     const resData = await response.json();
-    //return data;
+
+    console.log("getPost async OK");
     setPosts(resData);
     return posts;
   }
 
   async function handleClick(id) {
-    const response = await fetch(
+     await fetch(
       `${process.env.REACT_APP_BACKEND_POSTS_URL}/${id}`,
       {
         method: "DELETE",
@@ -33,15 +34,12 @@ function UserPosts() {
         },
       }
     );
-    const resData = await response.json();
-    console.log(resData);
-
-    setClick(!click);
-    //return text;
+    console.log("handleClick async OK");
+    setPostChange(!postChange);
+ 
   }
 
-  //  makeaMap() { if myLat[i] || myLng[i] == null }(dontmakeamap) else (makeamap)
-
+ 
   return (
     <div className={css.outerDivContainer}>
       <div className={css.postsDiv}>
@@ -73,19 +71,19 @@ function UserPosts() {
                   </button>
                 </item>
 
+                <div className={css.imageMainContainer} hidden={!post.postImage}>
+                <img  className={css.imageMainContainerImage} src={post.postImage} alt="userImage"/>
+                </div>
                 {/* <br></br> */}
                 <div className={css.buttonDiv}>
                   <button
                     className={css.deleteButton}
                     hidden={post.name !== user.name}
                     onClick={() => handleClick(post.id)}
-                  >
+                    >
                     {<DeleteIcon />}
                   </button>
                 </div> 
-                <div className={css.imageMainContainer} hidden={!post.postImage}>
-                <img  className={css.imageMainContainerImage} src={post.postImage} alt="userImage"/>
-                </div>
               </li>
             ))}
         </ul>
